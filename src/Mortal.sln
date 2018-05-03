@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2024
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MortalControl", "MortalControl\MortalControl.csproj", "{D9FE17E1-F280-448C-AB6E-B2BE861AA05E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MortalDemo", "MortalDemo\MortalDemo.csproj", "{BCE07688-37B1-4BC1-A2FC-4048F7C1B12D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9FE17E1-F280-448C-AB6E-B2BE861AA05E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9FE17E1-F280-448C-AB6E-B2BE861AA05E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9FE17E1-F280-448C-AB6E-B2BE861AA05E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9FE17E1-F280-448C-AB6E-B2BE861AA05E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCE07688-37B1-4BC1-A2FC-4048F7C1B12D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCE07688-37B1-4BC1-A2FC-4048F7C1B12D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCE07688-37B1-4BC1-A2FC-4048F7C1B12D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCE07688-37B1-4BC1-A2FC-4048F7C1B12D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9991991E-0EDE-4091-9610-3C3CC743F047}
+	EndGlobalSection
+EndGlobal
