@@ -14,8 +14,6 @@ namespace MortalControl
     {
         private const int SC_CLOSE = 0xF060;
 
-        private const int MF_ENABLED = 0x00000000;
-
         private const int MF_GRAYED = 0x00000001;
 
         private const int MF_DISABLED = 0x00000002;
@@ -92,8 +90,7 @@ namespace MortalControl
 
         private void MortalWait_Load(object sender, EventArgs e)
         {
-            IntPtr hMenu = GetSystemMenu(this.Handle, 0);
-            EnableMenuItem(hMenu, SC_CLOSE, MF_DISABLED | MF_GRAYED);
+            EnableMenuItem(GetSystemMenu(Handle, 0), SC_CLOSE, MF_DISABLED | MF_GRAYED);
         }
     }
 }

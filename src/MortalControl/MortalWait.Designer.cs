@@ -53,10 +53,9 @@
             this.progressBar1.Location = new System.Drawing.Point(0, 0);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(330, 23);
-            //this.progressBar1.StrBrush = null;
-            //this.progressBar1.StrColor = null;
             this.progressBar1.TabIndex = 2;
             this.progressBar1.TitleColor = System.Drawing.Color.White;
+            this.progressBar1.TitleFont = new System.Drawing.Font("宋体", 11.5F);
             // 
             // MortalWait
             // 

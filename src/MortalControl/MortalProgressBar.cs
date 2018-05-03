@@ -30,11 +30,20 @@ namespace MortalControl
 
         private Color titleColor = Color.White;
         [Browsable(true)]
-        [DisplayName("提示"), Description("百分比提示信息文本颜色"), Category("百分比提示"), DefaultValue(StringAlignment.Center)]
+        [DisplayName("文本颜色"), Description("百分比提示信息文本颜色"), Category("百分比提示")]
         public Color TitleColor
         {
             get { return titleColor; }
             set { titleColor = value; }
+        }
+
+        private Font titleFont = DefaultFont;
+        [Browsable(true)]
+        [DisplayName("文本格式"), Description("百分比提示信息文本格式"), Category("百分比提示")]
+        public Font TitleFont
+        {
+            get { return titleFont; }
+            set { titleFont = value; }
         }
 
         public MortalProgressBar()
@@ -44,19 +53,10 @@ namespace MortalControl
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            SolidBrush brush = null;
-            Rectangle bounds = new Rectangle(0, 0, base.Width, base.Height);
-            bounds.Width = ((int)(bounds.Width * (Value / ((double)Maximum))));
-            //brush = new SolidBrush(Color.Coral);
-            brush = new SolidBrush(ForeColor);
-            e.Graphics.FillRectangle(Brushes.DodgerBlue, 0, 0, bounds.Width, bounds.Height);
-
-            var str = (((double)base.Value / (double)base.Maximum) * 100).ToString("0") + "%";
-
-            Font font = new Font("宋体", (float)11, FontStyle.Regular);
-            Brush brushStr = Brushes.White;
-            Rectangle rectangle = new Rectangle(0, 0, base.Width, base.Height);
-            e.Graphics.DrawString(str, font, new SolidBrush(titleColor), rectangle, new StringFormat { Alignment = TitleAlignment, LineAlignment = titleLineAlignment });
+            Rectangle bounds = new Rectangle(0, 0, (int)(Width * (Value / ((double)Maximum))), Height);
+            var str = (Value / (double)Maximum * 100).ToString("0") + "%";
+            e.Graphics.FillRectangle(new SolidBrush(ForeColor), 0, 0, bounds.Width, bounds.Height);
+            e.Graphics.DrawString(str, titleFont, new SolidBrush(titleColor), new Rectangle(0, 0, Width, Height), new StringFormat { Alignment = TitleAlignment, LineAlignment = titleLineAlignment });
         }
     }
 }
