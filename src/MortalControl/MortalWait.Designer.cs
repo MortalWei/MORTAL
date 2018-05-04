@@ -68,8 +68,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MortalWait";
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MortalWait";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.MortalWait_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

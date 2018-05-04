@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace MortalDemo
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Form, IFrameProgress
     {
         public Form1()
         {
@@ -19,13 +19,64 @@ namespace MortalDemo
 
         private void btnWaitTest_Click(object sender, EventArgs e)
         {
-            using (MortalWait frmw = new MortalWait())
+            //List<Action> _List = new List<Action>();
+            //for (int i = 0; i < 100; i++)
+            //{
+            //    _List.Add(Run1);
+            //}
+            //MortalCall.Waiting(_List.ToArray());
+            MortalCall.Waiting(this, this);
+        }
+
+        //BackgroundWorker m_Worker = new BackgroundWorker();
+
+        private void Run1()
+        {
+            Helpers.WriteTxtHelper.DebuggerLog(Guid.NewGuid().ToString());
+            //System.Threading.Thread.Sleep(10);
+        }
+
+        private void Run2()
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //m_Worker.DoWork += Worker_DoWork;
+        }
+
+        private void Worker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            //try
+            //{
+            //    if (m_Worker.IsBusy) return;
+            //    if (!IsDisposed)
+            //        lblMsg.Text = DateTime.Now.ToLongTimeString();
+            //}
+            //catch (Exception ex)
+            //{
+            //    m_Worker.CancelAsync();
+            //}
+        }
+
+        public void LoadProgressHandle(ProgressBar progressBar)
+        {
+            progressBar.Minimum = 1;
+            progressBar.Maximum = 100;
+            progressBar.Step = 1;
+            progressBar.Value = 1;
+            for (int i = 0; i < 100; i++)
             {
-                List<string> list = frmw.DoWait(123) as List<string>; //弹出模式等待窗体 实时更新显示后台工作进度 后台工作结束后  等待窗体消失  UI线程继续执行...
-                MessageBox.Show("加载字符串 " + list.Count + "个");
+                progressBar.PerformStep();
+                //var ss = progressBar.Value;
+                System.Threading.Thread.Sleep(50);
             }
-            //MortalWait FM = new MortalWait();
-            //FM.ShowDialog();
         }
     }
 }
