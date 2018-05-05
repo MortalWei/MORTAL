@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D9FE17E1-F280-448C-AB6E-B2BE861AA05E}</ProjectGuid>
+    <ProjectGuid>{23E5B41B-CC82-47A6-8779-4C2C39AE52D2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MortalControl</RootNamespace>
-    <AssemblyName>MortalControl</AssemblyName>
+    <RootNamespace>MortalLib</RootNamespace>
+    <AssemblyName>MortalLib</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -20,7 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\MortalControl.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\MortalLib.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -33,8 +33,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,29 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IFrameProgress.cs" />
-    <Compile Include="MortalCall.cs" />
-    <Compile Include="MortalProgressBar.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="MortalWait.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MortalWait.Designer.cs">
-      <DependentUpon>MortalWait.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MortalWaitCircle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MortalWaitCircle.Designer.cs">
-      <DependentUpon>MortalWaitCircle.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Attributes\PresenterBindingAttribute.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Enums\EventStatus.cs" />
+    <Compile Include="EventArgs\MortalEventArgs.cs" />
+    <Compile Include="Interface\IPresenter.cs" />
+    <Compile Include="Interface\IView.cs" />
+    <Compile Include="Performs\PresenterBinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="MortalWait.resx">
-      <DependentUpon>MortalWait.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="Realization\Presenter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
