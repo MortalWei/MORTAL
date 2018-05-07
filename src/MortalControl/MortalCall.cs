@@ -12,7 +12,6 @@ namespace MortalControl
         {
             using (MortalWait frmw = new MortalWait())
             {
-                //List<string> list = frmw.DoWait(123) as List<string>; //弹出模式等待窗体 实时更新显示后台工作进度 后台工作结束后  等待窗体消失  UI线程继续执行...
                 frmw.DoWait(num);
             }
         }
@@ -25,11 +24,29 @@ namespace MortalControl
             }
         }
 
-        public static void Waiting(IWin32Window handle, IFrameProgress frameProgress)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="handle"></param>
+        /// <param name="frameProgress"></param>
+        public static void Waiting(IWin32Window handle, IProgressFrame frameProgress)
         {
             using (MortalWait wait = new MortalWait())
             {
                 wait.DoWait(handle, frameProgress);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="frame"></param>
+        /// <param name="total"></param>
+        public static void Waiting(IProgressFrame frame, int total)
+        {
+            using (MortalWait wait = new MortalWait(total))
+            {
+                wait.DoWait(frame);
             }
         }
     }

@@ -34,13 +34,12 @@
             // 
             // lblMsg
             // 
-            this.lblMsg.AutoSize = true;
             this.lblMsg.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblMsg.Font = new System.Drawing.Font("宋体", 11.5F);
             this.lblMsg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.lblMsg.Location = new System.Drawing.Point(0, 23);
             this.lblMsg.Name = "lblMsg";
-            this.lblMsg.Size = new System.Drawing.Size(80, 16);
+            this.lblMsg.Size = new System.Drawing.Size(330, 16);
             this.lblMsg.TabIndex = 1;
             this.lblMsg.Text = "请稍候...";
             this.lblMsg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -65,15 +64,10 @@
             this.ClientSize = new System.Drawing.Size(330, 39);
             this.Controls.Add(this.lblMsg);
             this.Controls.Add(this.progressBar1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MortalWait";
-            this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MortalWait";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.MortalWait_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace MortalDemo
 {
-    public partial class Form1 : Form, IFrameProgress
+    public partial class Form1 : Form, IProgressFrame
     {
         public Form1()
         {
@@ -25,7 +25,8 @@ namespace MortalDemo
             //    _List.Add(Run1);
             //}
             //MortalCall.Waiting(_List.ToArray());
-            MortalCall.Waiting(this, this);
+            MortalCall.Waiting(this, 100);
+            //MortalCall.Waiting(150);
         }
 
         //BackgroundWorker m_Worker = new BackgroundWorker();
@@ -65,18 +66,19 @@ namespace MortalDemo
             //}
         }
 
-        public void LoadProgressHandle(ProgressBar progressBar)
+        public void LoadProgressHandle(IProgressCall callBack)
         {
-            progressBar.Minimum = 1;
-            progressBar.Maximum = 100;
-            progressBar.Step = 1;
-            progressBar.Value = 1;
-            for (int i = 0; i < 100; i++)
+            for (int i = 1; i < 101; i++)
             {
-                progressBar.PerformStep();
-                //var ss = progressBar.Value;
+                StringBuilder builder = new StringBuilder();
+                builder.Append("正在执行第[").Append(i).Append("]个处理...");
+                callBack.PerformStep(builder.ToString());
                 System.Threading.Thread.Sleep(50);
             }
+        }
+
+        public void LoadProgressHandle(ProgressBar progressBar)
+        {
         }
     }
 }

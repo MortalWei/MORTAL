@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MortalControl.BaseClass;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,26 +13,12 @@ using System.Windows.Forms;
 
 namespace MortalControl
 {
-    public partial class MortalWait : Form
+    /// <summary>
+    /// 进度条等待窗体
+    /// </summary>
+    public partial class MortalWait : NoneForm, IProgressCall
     {
-        //private const int SC_CLOSE = 0xF060;
-
-        //private const int MF_GRAYED = 0x00000001;
-
-        //private const int MF_DISABLED = 0x00000002;
-
         private bool _run = true;
-
-        /// <summary>
-        /// 提示文本
-        /// </summary>
-        public string TitleText { get; set; }
-
-        //[DllImport("user32.dll", EntryPoint = "GetSystemMenu")]
-        //private static extern IntPtr GetSystemMenu(IntPtr hWnd, int bRevert);
-
-        //[DllImport("User32.dll")]
-        //public static extern bool EnableMenuItem(IntPtr hMenu, int uIDEnableItem, int uEnable);
 
         /// <summary>
         /// 禁用 Alt|F4
@@ -47,11 +34,34 @@ namespace MortalControl
             }
         }
 
+        /// <summary>
+        /// 构造
+        /// </summary>
         public MortalWait()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// 构造:设置进度条总步长
+        /// </summary>
+        /// <param name="total">进度总步长</param>
+        public MortalWait(int total) : this()
+        {
+            progressBar1.Maximum = total;
+            progressBar1.Step = 1;
+            progressBar1.BindingContextChanged += ProgressBar1_BindingContextChanged;
+        }
+
+        private void ProgressBar1_BindingContextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 异步处理方法
+        /// </summary>
+        /// <param name="method"></param>
         public void DoWait(Action method)
         {
             var task1 = Task.Factory.StartNew(() =>
@@ -62,6 +72,10 @@ namespace MortalControl
             Task.WaitAll(_Tasks);
         }
 
+        /// <summary>
+        /// 异步处理多个方法
+        /// </summary>
+        /// <param name="methods"></param>
         public void DoWait(Action[] methods)
         {
             if (methods == null) return;
@@ -88,9 +102,15 @@ namespace MortalControl
             ShowDialog();
         }
 
-        public void DoWait(IWin32Window handle, IFrameProgress frameProgress)
+        /// <summary>
+        /// 由用户控制的进度显示
+        /// </summary>
+        /// <param name="handle"></param>
+        /// <param name="frameProgress"></param>
+        public void DoWait(IWin32Window handle, IProgressFrame frameProgress)
         {
             if (frameProgress == null) return;
+
             (new Action(() =>
             {
                 System.Threading.Thread.Sleep(1000);
@@ -98,11 +118,27 @@ namespace MortalControl
                 if (IsDisposed) return;
                 Invoke((Action)delegate ()
                 {
-                    frameProgress.LoadProgressHandle(progressBar1);
+                    frameProgress.LoadProgressHandle(this);
                 });
             })).BeginInvoke(new AsyncCallback(OnAsync), null);
 
-            ShowDialog(handle);
+            if (handle == null)
+            {
+                ShowDialog();
+            }
+            else
+            {
+                ShowDialog(handle);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="frame"></param>
+        public void DoWait(IProgressFrame frame)
+        {
+            DoWait(handle: null, frameProgress: frame);
         }
 
         public void DoWait(object param)
@@ -127,7 +163,7 @@ namespace MortalControl
                             if (!IsDisposed)
                             {
                                 progressBar1.Value = i;
-                                lblMsg.Text = "正在载入字符串 \"" + s + "\"";
+                                lblMsg.Text = "正在克隆第 \"" + (i + 1) + "\" 个[郭恒涛]";
                             }
                         });
                         System.Threading.Thread.Sleep(50);
@@ -154,6 +190,22 @@ namespace MortalControl
         private void MortalWait_Load(object sender, EventArgs e)
         {
             //EnableMenuItem(GetSystemMenu(Handle, 0), SC_CLOSE, MF_DISABLED | MF_GRAYED);
+        }
+
+        public void PerformStep()
+        {
+
+        }
+
+        public void PerformStep(string title)
+        {
+            //lblMsg.Invoke(new EventHandler(delegate
+            //{
+            lblMsg.Text = title;
+            lblMsg.Refresh();
+            //}));
+
+            progressBar1.PerformStep();
         }
     }
 }

@@ -42,27 +42,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IFrameProgress.cs" />
+    <Compile Include="BaseClass\NoneForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IProgressCall.cs" />
+    <Compile Include="IProgressFrame.cs" />
     <Compile Include="MortalCall.cs" />
-    <Compile Include="MortalProgressBar.cs">
+    <Compile Include="Controls\MortalProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="MortalWait.cs">
+    <Compile Include="Forms\MortalWait.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MortalWait.Designer.cs">
+    <Compile Include="Forms\MortalWait.Designer.cs">
       <DependentUpon>MortalWait.cs</DependentUpon>
     </Compile>
-    <Compile Include="MortalWaitCircle.cs">
+    <Compile Include="Forms\MortalWaitCircle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MortalWaitCircle.Designer.cs">
+    <Compile Include="Forms\MortalWaitCircle.Designer.cs">
       <DependentUpon>MortalWaitCircle.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MortalWait.resx">
+    <EmbeddedResource Include="Forms\MortalWait.resx">
       <DependentUpon>MortalWait.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
