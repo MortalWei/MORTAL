@@ -1,6 +1,8 @@
-﻿namespace MortalControl
+﻿using MortalControl.Controls;
+
+namespace MortalControl
 {
-    partial class MortalWait
+    partial class MFProgress
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +31,7 @@
         private void InitializeComponent()
         {
             this.lblMsg = new System.Windows.Forms.Label();
-            this.progressBar1 = new MortalControl.MortalProgressBar();
+            this.prgMain = new MortalControl.Controls.MortalProgressBar();
             this.SuspendLayout();
             // 
             // lblMsg
@@ -37,42 +39,42 @@
             this.lblMsg.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblMsg.Font = new System.Drawing.Font("宋体", 11.5F);
             this.lblMsg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            this.lblMsg.Location = new System.Drawing.Point(0, 23);
+            this.lblMsg.Location = new System.Drawing.Point(3, 26);
+            this.lblMsg.Margin = new System.Windows.Forms.Padding(3);
             this.lblMsg.Name = "lblMsg";
-            this.lblMsg.Size = new System.Drawing.Size(330, 16);
+            this.lblMsg.Size = new System.Drawing.Size(294, 16);
             this.lblMsg.TabIndex = 1;
             this.lblMsg.Text = "请稍候...";
             this.lblMsg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // progressBar1
             // 
-            this.progressBar1.BackColor = System.Drawing.Color.Silver;
-            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.progressBar1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.progressBar1.Location = new System.Drawing.Point(0, 0);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(330, 23);
-            this.progressBar1.TabIndex = 2;
-            this.progressBar1.TitleColor = System.Drawing.Color.White;
-            this.progressBar1.TitleFont = new System.Drawing.Font("宋体", 11.5F);
+            this.prgMain.BackColor = System.Drawing.Color.SkyBlue;
+            this.prgMain.Dock = System.Windows.Forms.DockStyle.Top;
+            this.prgMain.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.prgMain.Location = new System.Drawing.Point(3, 3);
+            this.prgMain.Name = "progressBar1";
+            this.prgMain.Size = new System.Drawing.Size(294, 23);
+            this.prgMain.TabIndex = 2;
+            this.prgMain.TitleColor = System.Drawing.Color.White;
+            this.prgMain.TitleFont = new System.Drawing.Font("宋体", 11.5F);
             // 
-            // MortalWait
+            // MFProgress
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(330, 39);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(300, 45);
             this.Controls.Add(this.lblMsg);
-            this.Controls.Add(this.progressBar1);
-            this.Name = "MortalWait";
+            this.Controls.Add(this.prgMain);
+            this.Name = "MFProgress";
             this.Text = "MortalWait";
-            this.Load += new System.EventHandler(this.MortalWait_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Label lblMsg;
-        private MortalProgressBar progressBar1;
+        private MortalProgressBar prgMain;
     }
 }

@@ -7,8 +7,8 @@
     <ProjectGuid>{D9FE17E1-F280-448C-AB6E-B2BE861AA05E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MortalControl</RootNamespace>
-    <AssemblyName>MortalControl</AssemblyName>
+    <RootNamespace>Mortal.Parts</RootNamespace>
+    <AssemblyName>Mortal.Parts</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -20,7 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\MortalControl.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\Mortal.Parts.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -45,29 +45,44 @@
     <Compile Include="BaseClass\NoneForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Controls\MortalCircle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MortalFormTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MortalFormTest.Designer.cs">
+      <DependentUpon>MortalFormTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="IProgressCall.cs" />
     <Compile Include="IProgressFrame.cs" />
     <Compile Include="MortalCall.cs" />
     <Compile Include="Controls\MortalProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\MortalWait.cs">
+    <Compile Include="Forms\MFProgress.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MortalWait.Designer.cs">
-      <DependentUpon>MortalWait.cs</DependentUpon>
+    <Compile Include="Forms\MFProgress.Designer.cs">
+      <DependentUpon>MFProgress.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MortalWaitCircle.cs">
+    <Compile Include="Forms\MFWait.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MortalWaitCircle.Designer.cs">
-      <DependentUpon>MortalWaitCircle.cs</DependentUpon>
+    <Compile Include="Forms\MFWait.Designer.cs">
+      <DependentUpon>MFWait.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\MortalWait.resx">
-      <DependentUpon>MortalWait.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\MortalFormTest.resx">
+      <DependentUpon>MortalFormTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MFProgress.resx">
+      <DependentUpon>MFProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MFWait.resx">
+      <DependentUpon>MFWait.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

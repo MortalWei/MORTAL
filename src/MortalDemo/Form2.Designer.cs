@@ -1,6 +1,6 @@
-﻿namespace MortalControl
+﻿namespace MortalDemo
 {
-    partial class MortalWaitCircle
+    partial class Form2
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // Form2
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "MortalWaitCircle";
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "Form2";
+            this.Text = "Form2";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form2_Paint);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

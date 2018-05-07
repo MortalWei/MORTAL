@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2024
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MortalControl", "MortalControl\MortalControl.csproj", "{D9FE17E1-F280-448C-AB6E-B2BE861AA05E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mortal.Parts", "MortalControl\Mortal.Parts.csproj", "{D9FE17E1-F280-448C-AB6E-B2BE861AA05E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MortalDemo", "MortalDemo\MortalDemo.csproj", "{BCE07688-37B1-4BC1-A2FC-4048F7C1B12D}"
 EndProject

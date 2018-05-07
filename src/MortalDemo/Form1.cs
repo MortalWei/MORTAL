@@ -19,14 +19,14 @@ namespace MortalDemo
 
         private void btnWaitTest_Click(object sender, EventArgs e)
         {
-            //List<Action> _List = new List<Action>();
-            //for (int i = 0; i < 100; i++)
-            //{
-            //    _List.Add(Run1);
-            //}
-            //MortalCall.Waiting(_List.ToArray());
-            MortalCall.Waiting(this, 100);
-            //MortalCall.Waiting(150);
+            List<Action> _List = new List<Action>();
+            for (int i = 0; i < 100; i++)
+            {
+                _List.Add(Run1);
+            }
+            MortalWait.Waiting(_List.ToArray());
+            //MortalCall.Waiting(this, 100);
+            //MortalWait.Waiting(150);
         }
 
         //BackgroundWorker m_Worker = new BackgroundWorker();
@@ -34,12 +34,12 @@ namespace MortalDemo
         private void Run1()
         {
             Helpers.WriteTxtHelper.DebuggerLog(Guid.NewGuid().ToString());
-            //System.Threading.Thread.Sleep(10);
+            System.Threading.Thread.Sleep(100);
         }
 
         private void Run2()
         {
-
+            System.Threading.Thread.Sleep(5000);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -79,6 +79,22 @@ namespace MortalDemo
 
         public void LoadProgressHandle(ProgressBar progressBar)
         {
+        }
+
+        private void btnCircle_Click(object sender, EventArgs e)
+        {
+            var _List = new Action[] { Run2, Run2, Run2, Run2 };
+
+            MortalWait.Waiting("正在保存,请稍候....", _List);
+
+            //MortalWaitCircle fm = new MortalWaitCircle();
+            //fm.ShowDialog();
+
+            //MortalControl.Forms.MortalFormTest fm = new MortalControl.Forms.MortalFormTest();
+            //fm.ShowDialog();
+
+            //Form2 fm = new Form2();
+            //fm.ShowDialog();
         }
     }
 }

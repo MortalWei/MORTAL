@@ -30,6 +30,7 @@
         {
             this.btnWaitTest = new System.Windows.Forms.Button();
             this.lblMsg = new System.Windows.Forms.Label();
+            this.btnCircle = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnWaitTest
@@ -39,7 +40,7 @@
             this.btnWaitTest.Name = "btnWaitTest";
             this.btnWaitTest.Size = new System.Drawing.Size(584, 23);
             this.btnWaitTest.TabIndex = 0;
-            this.btnWaitTest.Text = "等待窗体测试";
+            this.btnWaitTest.Text = "进度条";
             this.btnWaitTest.UseVisualStyleBackColor = true;
             this.btnWaitTest.Click += new System.EventHandler(this.btnWaitTest_Click);
             // 
@@ -52,11 +53,23 @@
             this.lblMsg.TabIndex = 1;
             this.lblMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnCircle
+            // 
+            this.btnCircle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCircle.Location = new System.Drawing.Point(0, 23);
+            this.btnCircle.Name = "btnCircle";
+            this.btnCircle.Size = new System.Drawing.Size(584, 23);
+            this.btnCircle.TabIndex = 2;
+            this.btnCircle.Text = "等待";
+            this.btnCircle.UseVisualStyleBackColor = true;
+            this.btnCircle.Click += new System.EventHandler(this.btnCircle_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 361);
+            this.Controls.Add(this.btnCircle);
             this.Controls.Add(this.lblMsg);
             this.Controls.Add(this.btnWaitTest);
             this.MaximizeBox = false;
@@ -73,6 +86,7 @@
 
         private System.Windows.Forms.Button btnWaitTest;
         private System.Windows.Forms.Label lblMsg;
+        private System.Windows.Forms.Button btnCircle;
     }
 }
 

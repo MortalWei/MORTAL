@@ -6,11 +6,22 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace MortalControl
+namespace MortalControl.Controls
 {
+    /// <summary>
+    /// 进度条
+    /// </summary>
     public class MortalProgressBar : ProgressBar
     {
+        #region Attribute & Variable
         private StringAlignment msgAlignment = StringAlignment.Center;
+        private StringAlignment titleLineAlignment = StringAlignment.Center;
+        private Color titleColor = Color.White;
+        private Font titleFont = DefaultFont;
+
+        /// <summary>
+        /// 水平对齐方式
+        /// </summary>
         [Browsable(true)]
         [DisplayName("水平对齐方式"), Description("百分比提示信息水平对齐方式"), Category("百分比提示"), DefaultValue(StringAlignment.Center)]
         public StringAlignment TitleAlignment
@@ -19,7 +30,9 @@ namespace MortalControl
             set { msgAlignment = value; }
         }
 
-        private StringAlignment titleLineAlignment = StringAlignment.Center;
+        /// <summary>
+        /// 垂直对齐方式
+        /// </summary>
         [Browsable(true)]
         [DisplayName("垂直对齐方式"), Description("百分比提示信息垂直对齐方式"), Category("百分比提示"), DefaultValue(StringAlignment.Center)]
         public StringAlignment TitleLineAlignment
@@ -28,7 +41,9 @@ namespace MortalControl
             set { titleLineAlignment = value; }
         }
 
-        private Color titleColor = Color.White;
+        /// <summary>
+        /// 文本颜色
+        /// </summary>
         [Browsable(true)]
         [DisplayName("文本颜色"), Description("百分比提示信息文本颜色"), Category("百分比提示")]
         public Color TitleColor
@@ -37,7 +52,9 @@ namespace MortalControl
             set { titleColor = value; }
         }
 
-        private Font titleFont = DefaultFont;
+        /// <summary>
+        /// 文本格式
+        /// </summary>
         [Browsable(true)]
         [DisplayName("文本格式"), Description("百分比提示信息文本格式"), Category("百分比提示")]
         public Font TitleFont
@@ -45,6 +62,7 @@ namespace MortalControl
             get { return titleFont; }
             set { titleFont = value; }
         }
+        #endregion
 
         public MortalProgressBar()
         {
