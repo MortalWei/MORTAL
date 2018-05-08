@@ -1,6 +1,4 @@
-﻿using MortalControl.Controls;
-
-namespace MortalControl
+﻿namespace Mortal.Parts
 {
     partial class MFProgress
     {
@@ -31,7 +29,7 @@ namespace MortalControl
         private void InitializeComponent()
         {
             this.lblMsg = new System.Windows.Forms.Label();
-            this.prgMain = new MortalControl.Controls.MortalProgressBar();
+            this.prgMain = new MortalProgressBar();
             this.SuspendLayout();
             // 
             // lblMsg
@@ -47,14 +45,15 @@ namespace MortalControl
             this.lblMsg.Text = "请稍候...";
             this.lblMsg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // progressBar1
+            // prgMain
             // 
             this.prgMain.BackColor = System.Drawing.Color.SkyBlue;
             this.prgMain.Dock = System.Windows.Forms.DockStyle.Top;
             this.prgMain.ForeColor = System.Drawing.Color.DodgerBlue;
             this.prgMain.Location = new System.Drawing.Point(3, 3);
-            this.prgMain.Name = "progressBar1";
+            this.prgMain.Name = "prgMain";
             this.prgMain.Size = new System.Drawing.Size(294, 23);
+            this.prgMain.Step = 1;
             this.prgMain.TabIndex = 2;
             this.prgMain.TitleColor = System.Drawing.Color.White;
             this.prgMain.TitleFont = new System.Drawing.Font("宋体", 11.5F);
@@ -69,6 +68,7 @@ namespace MortalControl
             this.Controls.Add(this.prgMain);
             this.Name = "MFProgress";
             this.Text = "MortalWait";
+            this.Load += new System.EventHandler(this.MFProgress_Load);
             this.ResumeLayout(false);
 
         }

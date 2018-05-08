@@ -1,8 +1,9 @@
-﻿using MortalControl;
+﻿using Mortal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,10 @@ namespace MortalDemo
         private void btnWaitTest_Click(object sender, EventArgs e)
         {
             List<Action> _List = new List<Action>();
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 50; i++)
             {
-                _List.Add(Run1);
+                if (i % 2 == 0) _List.Add(Run1);
+                else _List.Add(Run2);
             }
             MortalWait.Waiting(_List.ToArray());
             //MortalCall.Waiting(this, 100);
@@ -33,13 +35,14 @@ namespace MortalDemo
 
         private void Run1()
         {
-            Helpers.WriteTxtHelper.DebuggerLog(Guid.NewGuid().ToString());
-            System.Threading.Thread.Sleep(100);
+            //Helpers.WriteTxtHelper.DebuggerLog(Guid.NewGuid().ToString());
+            System.Threading.Thread.Sleep(200);
         }
 
+        [Description("奔跑吧2")]
         private void Run2()
         {
-            System.Threading.Thread.Sleep(5000);
+            System.Threading.Thread.Sleep(200);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -77,15 +80,13 @@ namespace MortalDemo
             }
         }
 
-        public void LoadProgressHandle(ProgressBar progressBar)
-        {
-        }
-
         private void btnCircle_Click(object sender, EventArgs e)
         {
-            var _List = new Action[] { Run2, Run2, Run2, Run2 };
+            //MortalWait.Waiting()
 
-            MortalWait.Waiting("正在保存,请稍候....", _List);
+            //var _List = new Action[] { Run2, Run2, Run2, Run2 };
+
+            //MortalWait.Waiting("正在保存,请稍候....", _List);
 
             //MortalWaitCircle fm = new MortalWaitCircle();
             //fm.ShowDialog();

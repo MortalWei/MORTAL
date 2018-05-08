@@ -1,24 +1,35 @@
-﻿using System;
+﻿using Mortal.Parts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace MortalControl
+namespace Mortal
 {
     /// <summary>
     /// 等待处理
     /// </summary>
     public sealed class MortalWait
     {
+        /// <summary>
+        /// 进度条窗体测试
+        /// </summary>
+        /// <param name="num"></param>
         public static void Waiting(int num)
         {
+            if (num == 0) return;
             using (MFProgress frmw = new MFProgress())
             {
                 frmw.DoWait(num);
             }
         }
 
+        /// <summary>
+        /// 进度条等待方法执行完成
+        /// 同步执行
+        /// </summary>
+        /// <param name="methods"></param>
         public static void Waiting(Action[] methods)
         {
             using (MFProgress frmw = new MFProgress())
@@ -77,6 +88,7 @@ namespace MortalControl
             {
                 wait.DoWait(title, methods);
             }
+            List<Tuple<string, Action>> _list = new List<Tuple<string, Action>>();
         }
     }
 }

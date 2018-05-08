@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace MortalControl.Dev
+namespace Mortal.Dev
 {
     public partial class MortalWaitCircle : XtraForm
     {

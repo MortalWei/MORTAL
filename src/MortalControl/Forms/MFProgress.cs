@@ -1,25 +1,18 @@
-﻿using MortalControl.BaseClass;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
-namespace MortalControl
+namespace Mortal.Parts
 {
     /// <summary>
     /// 进度条等待窗体
     /// </summary>
     internal partial class MFProgress : NoneForm, IProgressCall
     {
-        static AutoResetEvent mEvent = new AutoResetEvent(false);
+        #region Attribute & Variable
+        private string DefaultTitle = string.Empty;
+        #endregion 
 
+        #region Structure
         /// <summary>
         /// 构造
         /// </summary>
@@ -36,60 +29,17 @@ namespace MortalControl
         {
             prgMain.Maximum = total;
             prgMain.Step = 1;
-            prgMain.BindingContextChanged += ProgressBar1_BindingContextChanged;
         }
+        #endregion
 
-        private void ProgressBar1_BindingContextChanged(object sender, EventArgs e)
+        #region Event Processing
+        private void MFProgress_Load(object sender, EventArgs e)
         {
-
+            NoticeThread.Set();
         }
+        #endregion
 
-        /// <summary>
-        /// 异步处理方法
-        /// </summary>
-        /// <param name="method"></param>
-        public void DoWait(Action method)
-        {
-            var task1 = Task.Factory.StartNew(() =>
-            {
-                Thread.Sleep(1000);
-            });
-            var _Tasks = new Task[] { task1 };
-            Task.WaitAll(_Tasks);
-        }
-
-        /// <summary>
-        /// 由用户控制的进度显示
-        /// </summary>
-        /// <param name="handle"></param>
-        /// <param name="frameProgress"></param>
-        public void DoWait(IWin32Window handle, IProgressFrame frameProgress)
-        {
-            if (frameProgress == null) return;
-
-            (new Action(() =>
-            {
-                System.Threading.Thread.Sleep(1000);
-
-                if (IsDisposed) return;
-                Invoke((Action)delegate ()
-                {
-                    frameProgress.LoadProgressHandle(this);
-                });
-            })).BeginInvoke(new AsyncCallback(OnAsync), null);
-
-            ShowDialog(handle);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="frame"></param>
-        public void DoWait(IProgressFrame frame)
-        {
-            DoWait(handle: null, frameProgress: frame);
-        }
-
+        #region Menthod
         /// <summary>
         /// 
         /// </summary>
@@ -99,9 +49,9 @@ namespace MortalControl
             int count = param;
             prgMain.Maximum = count;
 
-            //---------------------以下代码片段可以使用线程代替
             ((Action)delegate ()
             {
+                NoticeThread.WaitOne();
                 for (int i = 1; i < count + 1; ++i) //耗时操作
                 {
                     if (_RunAsync)
@@ -111,10 +61,10 @@ namespace MortalControl
                             if (!IsDisposed)
                             {
                                 prgMain.Value = i;
-                                lblMsg.Text = "正在克隆第 \"" + (i + 1) + "\" 个[郭恒涛]";
+                                lblMsg.Text = "正在克隆第 \"" + (i + 1) + "\" 个[周泽生]";
                             }
                         });
-                        Thread.Sleep(50);
+                        System.Threading.Thread.Sleep(50);
                     }
                     else
                     {
@@ -122,9 +72,9 @@ namespace MortalControl
                     }
                 }
 
-            }).BeginInvoke(new AsyncCallback(OnAsync), null);//异步执行后台工作
-            //------------------------
-            ShowDialog(); //UI界面等待
+            }).BeginInvoke(new AsyncCallback(OnAsync), null);
+
+            ShowDialog();
         }
 
         /// <summary>
@@ -133,53 +83,104 @@ namespace MortalControl
         /// <param name="methods"></param>
         public void DoWait(Action[] methods)
         {
-            if (methods == null) return;
+            DoWait(handle: null, methods: methods);
+        }
+
+        /// <summary>
+        /// 等待函数执行完成
+        /// </summary>
+        /// <param name="handle"></param>
+        /// <param name="methods"></param>
+        public void DoWait(IWin32Window handle, Action[] methods)
+        {
             prgMain.Maximum = methods.Length;
             ((Action)(() =>
             {
-                for (int i = 0; i < methods.Length; i++)
+                NoticeThread.WaitOne();//等待句柄
+                int num = 1;
+                foreach (var method in methods)
                 {
+                    //TODO:1.验证是否取消
+                    //TODO:2.验证是否抛出异常
                     if (_RunAsync)
                     {
                         Invoke((Action)(() =>
                         {
-                            lblMsg.Text = "正在执行 " + (i + 1) + "/" + methods.Length;
-                            prgMain.Value = i + 1;
+                            var _Msg = method.MethodDescription();
+                            lblMsg.Text = num + "/" + methods.Length + ",正在执行 " + _Msg + " 操作...";
+                            prgMain.Value = num;
                         }));
-                        methods[i]?.Invoke();
+                        method?.Invoke();
+                        num++;
                     }
                 }
             })).BeginInvoke(new AsyncCallback(OnAsync), null);
 
-            ShowDialog();
+            ShowDialog(handle);
         }
 
         /// <summary>
-        /// 执行回调函数
+        /// 用户控制的进度
         /// </summary>
-        /// <param name="args"></param>
-        private void RunAction(Action args)
+        /// <param name="frame"></param>
+        public void DoWait(IProgressFrame frame)
         {
-            args.Invoke();
+            DoWait(handle: null, frameProgress: frame);
         }
 
         /// <summary>
-        /// 
+        /// 用户控制的进度
         /// </summary>
-        public void PerformStep()
+        /// <param name="handle"></param>
+        /// <param name="frameProgress"></param>
+        public void DoWait(IWin32Window handle, IProgressFrame frameProgress)
         {
-            prgMain.PerformStep();
-        }
+            if (frameProgress == null) return;
 
+            (new Action(() =>
+            {
+                NoticeThread.WaitOne();
+                if (IsDisposed) return;
+                Invoke((Action)delegate ()
+                {
+                    frameProgress.LoadProgressHandle(this);
+                });
+            })).BeginInvoke(new AsyncCallback(OnAsync), null);
+
+            ShowDialog(handle);
+        }
+        #endregion
+
+        #region Setting Progress
         /// <summary>
-        /// 
+        /// 执行下一步操作
         /// </summary>
         /// <param name="title"></param>
         public void PerformStep(string title)
         {
-            lblMsg.Text = title;
+            lblMsg.Text = string.IsNullOrEmpty(title) ? DefaultTitle : title;
             lblMsg.Refresh();
             prgMain.PerformStep();
         }
+
+        /// <summary>
+        /// 完成
+        /// </summary>
+        public void Finish()
+        {
+            DialogResult = DialogResult.OK;
+        }
+
+        /// <summary>
+        /// 设置进度条默认最大值
+        /// </summary>
+        /// <param name="title">默认标题</param>
+        /// <param name="total">总进度数</param>
+        public void SetTotal(string title, int total)
+        {
+            prgMain.Maximum = total;
+            DefaultTitle = title;
+        }
+        #endregion 
     }
 }

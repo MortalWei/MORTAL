@@ -1,4 +1,4 @@
-﻿namespace MortalControl.Dev
+﻿namespace Mortal.Dev
 {
     partial class MortalWaitCircle
     {

@@ -1,18 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
-namespace MortalControl.Controls
+namespace Mortal.Parts
 {
     /// <summary>
     /// 
     /// </summary>
-    public class MortalCircle : Control
+    internal class MortalCircle : Control
     {
         #region 常数
         private const double NumberOfDegreesInCircle = 360;
@@ -23,7 +20,7 @@ namespace MortalControl.Controls
         private const int DefaultSpokeThickness = 6;
         private readonly Color DefaultColor = Color.SkyBlue;
         #endregion
-            
+
 
         #region 局部变量
 

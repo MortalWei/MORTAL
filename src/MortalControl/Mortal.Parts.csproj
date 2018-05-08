@@ -42,21 +42,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseClass\ExtendMethod.cs" />
     <Compile Include="BaseClass\NoneForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Controls\MortalCircle.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\MortalFormTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\MortalFormTest.Designer.cs">
-      <DependentUpon>MortalFormTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="IProgressCall.cs" />
     <Compile Include="IProgressFrame.cs" />
-    <Compile Include="MortalCall.cs" />
+    <Compile Include="MortalWait.cs" />
     <Compile Include="Controls\MortalProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -75,9 +70,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\MortalFormTest.resx">
-      <DependentUpon>MortalFormTest.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MFProgress.resx">
       <DependentUpon>MFProgress.cs</DependentUpon>
     </EmbeddedResource>

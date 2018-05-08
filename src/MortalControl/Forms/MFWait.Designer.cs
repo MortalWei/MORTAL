@@ -1,4 +1,4 @@
-﻿namespace MortalControl
+﻿namespace Mortal.Parts
 {
     partial class MFWait
     {
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.lblMsg = new System.Windows.Forms.Label();
-            this.circleMain = new MortalControl.Controls.MortalCircle();
+            this.circleMain = new MortalCircle();
             this.SuspendLayout();
             // 
             // lblMsg
@@ -41,7 +41,7 @@
             this.lblMsg.Name = "lblMsg";
             this.lblMsg.Size = new System.Drawing.Size(219, 54);
             this.lblMsg.TabIndex = 1;
-            this.lblMsg.Text = "正在加载，请稍候 ...";
+            this.lblMsg.Text = "请稍候 ...";
             this.lblMsg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // circleMain
@@ -60,7 +60,7 @@
             this.circleMain.TabIndex = 3;
             this.circleMain.Text = "mortalCircle1";
             // 
-            // MortalWaitCircle
+            // MFWait
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -68,14 +68,15 @@
             this.ClientSize = new System.Drawing.Size(300, 60);
             this.Controls.Add(this.lblMsg);
             this.Controls.Add(this.circleMain);
-            this.Name = "MortalWaitCircle";
+            this.Name = "MFWait";
             this.Text = "MortalWaitCircle";
+            this.Load += new System.EventHandler(this.MFWait_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Label lblMsg;
-        private Controls.MortalCircle circleMain;
+        private MortalCircle circleMain;
     }
 }

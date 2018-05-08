@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 
-namespace MortalControl.BaseClass
+namespace Mortal.Parts
 {
     /// <summary>
     /// 无边框纯框体
@@ -10,12 +11,17 @@ namespace MortalControl.BaseClass
     /// b.默认打开位置CenterScreen
     /// c.显示所有窗体之前
     /// </summary>
-    public class NoneForm : Form
+    internal class NoneForm : Form
     {
         /// <summary>
         /// 后台工作正常结束
         /// </summary>
         protected bool _RunAsync = true;
+
+        /// <summary>
+        /// 等待执行
+        /// </summary>
+        protected AutoResetEvent NoticeThread = new AutoResetEvent(false);
 
         /// <summary>
         /// 禁用 Alt|F4

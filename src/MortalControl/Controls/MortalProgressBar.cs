@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
-namespace MortalControl.Controls
+namespace Mortal.Parts
 {
     /// <summary>
     /// 进度条
     /// </summary>
-    public class MortalProgressBar : ProgressBar
+    internal class MortalProgressBar : ProgressBar
     {
         #region Attribute & Variable
         private StringAlignment msgAlignment = StringAlignment.Center;
@@ -64,11 +60,22 @@ namespace MortalControl.Controls
         }
         #endregion
 
+        #region Structure
+        /// <summary>
+        /// 构造
+        /// </summary>
         public MortalProgressBar()
         {
             SetStyle(ControlStyles.UserPaint, true);
+            Step = 1;
         }
+        #endregion
 
+        #region Override
+        /// <summary>
+        /// 重新绘制进度条显示样式
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnPaint(PaintEventArgs e)
         {
             Rectangle bounds = new Rectangle(0, 0, (int)(Width * (Value / ((double)Maximum))), Height);
@@ -76,5 +83,6 @@ namespace MortalControl.Controls
             e.Graphics.FillRectangle(new SolidBrush(ForeColor), 0, 0, bounds.Width, bounds.Height);
             e.Graphics.DrawString(str, titleFont, new SolidBrush(titleColor), new Rectangle(0, 0, Width, Height), new StringFormat { Alignment = TitleAlignment, LineAlignment = titleLineAlignment });
         }
+        #endregion 
     }
 }
