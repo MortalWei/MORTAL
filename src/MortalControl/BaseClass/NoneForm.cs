@@ -45,7 +45,7 @@ namespace Mortal.Parts
             StartPosition = FormStartPosition.CenterScreen;
             FormBorderStyle = FormBorderStyle.None;
             ShowInTaskbar = false;
-            TopMost = true;
+            //TopMost = true;
             Padding = new Padding(3, 3, 3, 3);
         }
 
