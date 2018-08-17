@@ -20,14 +20,14 @@ namespace MortalDemo
 
         private void btnWaitTest_Click(object sender, EventArgs e)
         {
-            List<Action> _List = new List<Action>();
-            for (int i = 0; i < 50; i++)
-            {
-                if (i % 2 == 0) _List.Add(Run1);
-                else _List.Add(Run2);
-            }
-            MortalWait.Waiting(_List.ToArray());
-            //MortalCall.Waiting(this, 100);
+            //List<Action> _List = new List<Action>();
+            //for (int i = 0; i < 50; i++)
+            //{
+            //    if (i % 2 == 0) _List.Add(Run1);
+            //    else _List.Add(Run2);
+            //}
+            //MortalWait.Waiting(_List.ToArray());
+            MortalWait.Waiting(this, this);
             //MortalWait.Waiting(150);
         }
 

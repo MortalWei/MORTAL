@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,8 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\PresenterBindingAttribute.cs" />
+    <Compile Include="DataTables\DataTableConvert.cs" />
     <Compile Include="Enums\EventStatus.cs" />
     <Compile Include="EventArgs\MortalEventArgs.cs" />
+    <Compile Include="Extensions\DataTableExtensions.cs" />
+    <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Interface\IPresenter.cs" />
     <Compile Include="Interface\IView.cs" />
     <Compile Include="Performs\PresenterBinder.cs" />

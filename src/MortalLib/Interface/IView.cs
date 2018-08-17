@@ -9,7 +9,7 @@
     /// MVP View基类
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public interface IView<T> : IView where T : class, new()
+    public interface IView<T> : IView where T : class
     {
         /// <summary>
         /// 默认实体

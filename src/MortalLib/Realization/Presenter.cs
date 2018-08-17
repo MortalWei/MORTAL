@@ -14,11 +14,16 @@ namespace Mortal.Realization
         public T View { get; }
 
         /// <summary>
+        /// 空构造
+        /// </summary>
+        public Presenter() { }
+
+        /// <summary>
         /// 默认构造
         /// 获取视图实例
         /// </summary>
         /// <param name="view"></param>
-        protected Presenter(T view)
+        protected Presenter(T view) : this()
         {
             View = view;
         }
