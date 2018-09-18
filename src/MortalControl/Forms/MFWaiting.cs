@@ -1,4 +1,5 @@
-﻿using Mortal.Skin.Shadow;
+﻿using Mortal.Parts.Properties;
+using Mortal.Skin.Shadow;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,14 +14,27 @@ namespace Mortal.Parts
     /// <summary>
     /// 动画等待窗体
     /// </summary>
-    internal partial class MFWaiting : ShadowForm
+    internal partial class MFWaiting : NoneForm
     {
+        /// <summary>
+        /// 动画工具
+        /// </summary>
+        DrawAnimate _DrawAnimate;
+
         /// <summary>
         /// 动画等待
         /// </summary>
         public MFWaiting()
         {
             InitializeComponent();
+            _DrawAnimate = new DrawAnimate(Resources.waiting);
+            _DrawAnimate.OnFrameChanged += new EventHandler<EventArgs>(DrawAnimate_OnFrameChanged);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint, true);
+        }
+
+        private void DrawAnimate_OnFrameChanged(object sender, EventArgs e)
+        {
+            Invalidate();
         }
 
         /// <summary>
@@ -125,10 +139,28 @@ namespace Mortal.Parts
         /// <param name="e"></param>
         private void MFWaiting_Load(object sender, EventArgs e)
         {
-            var _Path = AppDomain.CurrentDomain.BaseDirectory + "Html\\img\\waiting.gif";
-            webBrowser1.Url = new Uri(_Path);
-
+            _DrawAnimate.Play();
             NoticeThread.Set();
+        }
+
+        ///// <summary>
+        ///// 重绘,实现动画效果
+        ///// </summary>
+        ///// <param name="e"></param>
+        //protected override void OnPaint(PaintEventArgs e)
+        //{
+        //    lock (_DrawAnimate.Image)
+        //    {
+        //        e.Graphics.DrawImage(_DrawAnimate.Image, new Point(70, 25));
+        //    }
+        //}
+
+        private void MFWaiting_Paint(object sender, PaintEventArgs e)
+        {
+            lock (_DrawAnimate.Image)
+            {
+                e.Graphics.DrawImage(_DrawAnimate.Image, new Point(70, 25));
+            }
         }
     }
 }

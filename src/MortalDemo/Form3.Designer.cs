@@ -1,6 +1,6 @@
-﻿namespace Mortal.Skin.Shadow
+﻿namespace MortalDemo
 {
-    partial class ShadowForm
+    partial class Form3
     {
         /// <summary>
         /// Required designer variable.
@@ -30,17 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // ShadowForm
+            // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.MinimumSize = new System.Drawing.Size(1, 1);
-            this.Name = "ShadowForm";
-            this.Text = "ShadowForm";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ShadowForm_FormClosing);
-            this.Load += new System.EventHandler(this.IrregularForm_Load);
-            this.LocationChanged += new System.EventHandler(this.ShadowForm_LocationChanged);
+            this.Name = "Form3";
+            this.Text = "Form3";
+            this.Load += new System.EventHandler(this.Form3_Load);
             this.ResumeLayout(false);
 
         }

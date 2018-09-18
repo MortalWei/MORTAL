@@ -26,10 +26,10 @@ namespace Mortal.Skin.Shadow
             FormBorderStyle = FormBorderStyle.None;//设置无边框的窗口样式
             ShowInTaskbar = false;
 
-            StartPosition = FormStartPosition.CenterScreen;
-            FormBorderStyle = FormBorderStyle.None;
-            ShowInTaskbar = false;
-            Padding = new Padding(3, 3, 3, 3);
+            //StartPosition = FormStartPosition.CenterScreen;
+            //FormBorderStyle = FormBorderStyle.None;
+            //ShowInTaskbar = false;
+            //Padding = new Padding(3, 3, 3, 3);
 
 
         }
@@ -44,11 +44,6 @@ namespace Mortal.Skin.Shadow
             }
         }
 
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            //base.OnPaint(e);
-        }
-
         private void ShadowForm_LocationChanged(object sender, EventArgs e)
         {
             if (Skin != null)
@@ -56,6 +51,12 @@ namespace Mortal.Skin.Shadow
                 Skin.Location = new Point(Left - ShadowWidth, Top - ShadowWidth);
                 Skin.DrawShadow();
             }
+        }
+
+        private void ShadowForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Owner == null) return;
+            if (Owner.IsHandleCreated) Owner.Close();
         }
     }
 }

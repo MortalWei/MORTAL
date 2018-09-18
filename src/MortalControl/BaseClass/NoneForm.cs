@@ -47,6 +47,8 @@ namespace Mortal.Parts
             ShowInTaskbar = false;
             //TopMost = true;
             Padding = new Padding(3, 3, 3, 3);
+
+            SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint, true);
         }
 
         /// <summary>

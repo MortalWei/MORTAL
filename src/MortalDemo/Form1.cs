@@ -42,7 +42,7 @@ namespace MortalDemo
         [Description("奔跑吧2")]
         private void Run2()
         {
-            System.Threading.Thread.Sleep(500);
+            System.Threading.Thread.Sleep(5000);
         }
 
         private void label1_Click(object sender, EventArgs e)

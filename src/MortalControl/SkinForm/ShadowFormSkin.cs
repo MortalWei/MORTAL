@@ -30,7 +30,6 @@ namespace Mortal.Skin.Shadow
             Width += (Main.ShadowWidth * 2);
             Height += (Main.ShadowWidth * 2);
             Main.Owner = this;//设置控件层的拥有皮肤层
-                              //SetBits();//绘制半透明不规则皮肤
         }
         private void ShadowFormSkin_Load(object sender, EventArgs e)
         {
