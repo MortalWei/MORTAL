@@ -35,6 +35,7 @@ namespace Mortal.Parts
         #region Event Processing
         private void MFProgress_Load(object sender, EventArgs e)
         {
+            System.Threading.Thread.Sleep(50);
             NoticeThread.Set();
         }
         #endregion

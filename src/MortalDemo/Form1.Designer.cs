@@ -31,6 +31,7 @@
             this.btnWaitTest = new System.Windows.Forms.Button();
             this.lblMsg = new System.Windows.Forms.Label();
             this.btnCircle = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnWaitTest
@@ -64,11 +65,24 @@
             this.btnCircle.UseVisualStyleBackColor = true;
             this.btnCircle.Click += new System.EventHandler(this.btnCircle_Click);
             // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.Location = new System.Drawing.Point(0, 46);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(584, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "等待2";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(584, 361);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCircle);
             this.Controls.Add(this.lblMsg);
             this.Controls.Add(this.btnWaitTest);
@@ -87,6 +101,7 @@
         private System.Windows.Forms.Button btnWaitTest;
         private System.Windows.Forms.Label lblMsg;
         private System.Windows.Forms.Button btnCircle;
+        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -71,7 +71,7 @@ namespace Mortal
         /// <param name="title"></param>
         public static void Waiting(string title, Action method)
         {
-            using (MFWait wait = new MFWait())
+            using (var wait = new MFWaiting())
             {
                 wait.DoWait(title, method);
             }
@@ -84,11 +84,10 @@ namespace Mortal
         /// <param name="methods"></param>
         public static void Waiting(string title, Action[] methods)
         {
-            using (MFWait wait = new MFWait())
+            using (var wait = new MFWaiting())
             {
                 wait.DoWait(title, methods);
             }
-            List<Tuple<string, Action>> _list = new List<Tuple<string, Action>>();
         }
     }
 }

@@ -42,7 +42,7 @@ namespace MortalDemo
         [Description("奔跑吧2")]
         private void Run2()
         {
-            System.Threading.Thread.Sleep(200);
+            System.Threading.Thread.Sleep(500);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -82,11 +82,11 @@ namespace MortalDemo
 
         private void btnCircle_Click(object sender, EventArgs e)
         {
-            //MortalWait.Waiting()
+            //MortalWait.Waiting();
 
-            //var _List = new Action[] { Run2, Run2, Run2, Run2 };
+            var _List = new Action[] { Run2, Run2, Run2, Run2 };
 
-            //MortalWait.Waiting("正在保存,请稍候....", _List);
+            MortalWait.Waiting("正在保存,请稍候....", _List);
 
             //MortalWaitCircle fm = new MortalWaitCircle();
             //fm.ShowDialog();
@@ -96,6 +96,11 @@ namespace MortalDemo
 
             //Form2 fm = new Form2();
             //fm.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //MortalWait.TestWaiting();
         }
     }
 }
