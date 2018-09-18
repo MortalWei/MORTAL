@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("MortalControl.Dev")]
-[assembly: AssemblyDescription("基于DevExpress的基Control")]
+[assembly: AssemblyTitle("Lenovo Editors")]
+[assembly: AssemblyDescription("基于DevExpress的Editor")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Mortal")]
-[assembly: AssemblyProduct("MortalControl.Dev")]
+[assembly: AssemblyCompany("LenovoHit")]
+[assembly: AssemblyProduct("Lenovo Editors")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

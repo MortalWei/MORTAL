@@ -36,30 +36,6 @@ namespace MortalDemo
         private void Form2_Load(object sender, EventArgs e)
         {
         }
-
-        private void btnStart_Click(object sender, EventArgs e)
-        {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("IsSelected", typeof(bool));
-            dt.Columns.Add("Name", typeof(string));
-
-            List<TestModel> _List = new List<TestModel>();
-            for (int i = 0; i < 10; i++)
-            {
-                dt.Rows.Add();
-                dt.Rows[i]["IsSelected"] = false;
-                dt.Rows[i]["Name"] = "Name" + i;
-
-                var _Model = new TestModel
-                {
-                    Id = (i + 1).ToString(),
-                    Name = "Name" + (i + 1)
-                };
-                _List.Add(_Model);
-            }
-
-            gridMultiLookUpEdit1.Properties.DataSource = _List;// dt.DefaultView;
-        }
     }
 
     public class TestModel

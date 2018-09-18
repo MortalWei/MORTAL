@@ -7,8 +7,8 @@
     <ProjectGuid>{A0947880-AB89-4B6C-BC89-42942732EDAF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MortalLib.Dev</RootNamespace>
-    <AssemblyName>MortalLib.Dev</AssemblyName>
+    <RootNamespace>Lenovo.XtraEditors</RootNamespace>
+    <AssemblyName>Lenovo.XtraEditors</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -20,7 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\MortalLib.Dev.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\Lenovo.XtraEditors.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -37,6 +37,7 @@
     <Reference Include="DevExpress.Utils.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -51,15 +52,36 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControls\GridMultiLookUpEdit.cs">
+    <Compile Include="XtraEditors\GridMultiLookUpEdit.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UserControls\RepositoryItemGridMultiLookUpEdit.cs">
+    <Compile Include="XtraEditors\LenovoGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraEditors\LenovoLookUpEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraEditors\LenovoMemoEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraEditors\LenovoSerachControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraEditors\LenovoTextEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraEditors\LenovoTreeListLookUpEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraEditors\RepositoryItemGridMultiLookUpEdit.cs">
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repository\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
