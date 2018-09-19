@@ -36,7 +36,11 @@ namespace MortalDemo
         private void Form2_Load(object sender, EventArgs e)
         {
             GridLookUpEdit dd = new GridLookUpEdit();
-            //dd.Properties
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 

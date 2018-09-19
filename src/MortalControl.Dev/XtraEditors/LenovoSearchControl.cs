@@ -6,23 +6,23 @@ using System.Drawing;
 namespace Lenovo.XtraEditors
 {
     [ToolboxItem(true)]
-    public class LenovoMemoEdit : MemoEdit
+    public class LenovoSearchControl : SearchControl
     {
-        public override string EditorTypeName { get { return LenovoRepositoryItemMemoEdit.EditorName; } }
+        public override string EditorTypeName { get { return LenovoRepositoryItemSearchControl.EditorName; } }
 
         /// <summary>
         /// 默认构造
         /// </summary>
-        public LenovoMemoEdit() : base()
+        public LenovoSearchControl() 
         {
         }
 
         /// <summary>
         /// 静态构造:用于控件注册
         /// </summary>
-        static LenovoMemoEdit()
+        static LenovoSearchControl()
         {
-            LenovoRepositoryItemMemoEdit.RegisterEditor();
+            LenovoRepositoryItemSearchControl.RegisterEditor();
         }
 
         private Font m_Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -41,6 +41,6 @@ namespace Lenovo.XtraEditors
         /// 编辑器设置
         /// </summary>
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
-        public new LenovoRepositoryItemMemoEdit Properties { get { return base.Properties as LenovoRepositoryItemMemoEdit; } }
+        public new LenovoRepositoryItemSearchControl Properties { get { return base.Properties as LenovoRepositoryItemSearchControl; } }
     }
 }

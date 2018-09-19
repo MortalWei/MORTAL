@@ -9,13 +9,13 @@ using System.Drawing;
 
 namespace Lenovo.Repository
 {
-    [UserRepositoryItem("LenovoRepositoryItemTextEdit")]
-    public class LenovoRepositoryItemTextEdit : RepositoryItemTextEdit
+    [UserRepositoryItem("LenovoRepositoryItemMemoEdit")]
+    public class LenovoRepositoryItemMemoEdit : RepositoryItemMemoEdit
     {
         /// <summary>
         /// 控件类型名称
         /// </summary>
-        public const string EditorName = "LenovoRepositoryItemTextEdit";
+        public const string EditorName = "LenovoRepositoryItemMemoEdit";
 
         /// <summary>
         /// 控件类型名称
@@ -59,7 +59,7 @@ namespace Lenovo.Repository
         /// <summary>
         /// 默认构造
         /// </summary>
-        public LenovoRepositoryItemTextEdit()
+        public LenovoRepositoryItemMemoEdit()
         {
             SetDefaultAppearance();
         }
@@ -67,7 +67,7 @@ namespace Lenovo.Repository
         /// <summary>
         /// 静态构造:用于控件注册
         /// </summary>
-        static LenovoRepositoryItemTextEdit()
+        static LenovoRepositoryItemMemoEdit()
         {
             RegisterEditor();
         }
@@ -79,8 +79,8 @@ namespace Lenovo.Repository
         {
             System.Drawing.Image img = null;
             EditorRegistrationInfo.Default.Editors.Add(new EditorClassInfo(EditorName,
-              typeof(LenovoTextEdit), typeof(LenovoRepositoryItemTextEdit),
-              typeof(TextEditViewInfo), new TextEditPainter(), true, img));
+              typeof(LenovoMemoEdit), typeof(LenovoRepositoryItemMemoEdit),
+              typeof(MemoEditViewInfo), new MemoEditPainter(), true, img));
         }
 
         private void SetDefaultAppearance()
@@ -120,7 +120,7 @@ namespace Lenovo.Repository
         /// <param name="item"></param>
         public override void Assign(RepositoryItem item)
         {
-            LenovoRepositoryItemTextEdit source = item as LenovoRepositoryItemTextEdit;
+            LenovoRepositoryItemMemoEdit source = item as LenovoRepositoryItemMemoEdit;
             BeginUpdate();
             try
             {

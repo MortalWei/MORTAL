@@ -10,39 +10,36 @@ namespace Lenovo.XtraEditors
     {
         public override string EditorTypeName { get { return LenovoRepositoryItemTextEdit.EditorName; } }
 
-        public LenovoTextEdit()
+        /// <summary>
+        /// 默认构造
+        /// </summary>
+        public LenovoTextEdit() : base()
         {
-            //Properties.NullValuePromptShowForEmptyValue = true;
-            //Properties.NullValuePrompt = "请输入";
-            //Properties.Appearance.Font = Font;
-            //Properties.Appearance.Options.UseFont = true;
-            //Properties.AppearanceReadOnly.BackColor = Color.FromArgb(246, 246, 246);
-            //Properties.AppearanceReadOnly.BackColor2 = Color.FromArgb(246, 246, 246);
-            //Properties.AppearanceReadOnly.ForeColor = Color.FromArgb(22, 23, 35);
-            //Properties.AppearanceReadOnly.Options.UseBackColor = true;
-            //Properties.AppearanceReadOnly.Options.UseForeColor = true;
         }
 
+        /// <summary>
+        /// 静态构造:用于控件注册
+        /// </summary>
         static LenovoTextEdit()
         {
-            LenovoRepositoryItemTextEdit.RegisterLenovoTextEdit();
+            LenovoRepositoryItemTextEdit.RegisterEditor();
         }
 
         private Font m_Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+        /// <summary>
+        /// 定义特定的文本格式，包括字体、字号和字形属性。
+        /// </summary>
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public override Font Font
         {
-            get
-            {
-                return m_Font;
-            }
+            get { return m_Font; }
 
-            set
-            {
-                m_Font = value;
-            }
+            set { m_Font = value; }
         }
 
+        /// <summary>
+        /// 编辑器设置
+        /// </summary>
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         public new LenovoRepositoryItemTextEdit Properties { get { return base.Properties as LenovoRepositoryItemTextEdit; } }
     }

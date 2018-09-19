@@ -69,7 +69,12 @@
     <Compile Include="Repository\LenovoRepositoryItemTextEdit.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Utils\LenovoAppearanceObject.cs" />
+    <Compile Include="Repository\LenovoRepositoryItemSearchControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Repository\LenovoRepositoryItemMemoEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraEditors\GridMultiLookUpEdit.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -85,7 +90,7 @@
     <Compile Include="XtraEditors\LenovoMemoEdit.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="XtraEditors\LenovoSerachControl.cs">
+    <Compile Include="XtraEditors\LenovoSearchControl.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="XtraEditors\LenovoTextEdit.cs">
@@ -101,7 +106,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Utils\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

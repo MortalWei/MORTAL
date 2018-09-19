@@ -9,13 +9,13 @@ using System.Drawing;
 
 namespace Lenovo.Repository
 {
-    [UserRepositoryItem("LenovoRepositoryItemTextEdit")]
-    public class LenovoRepositoryItemTextEdit : RepositoryItemTextEdit
+    [UserRepositoryItem("LenovoRepositoryItemSearchControl")]
+    public class LenovoRepositoryItemSearchControl : RepositoryItemSearchControl
     {
         /// <summary>
         /// 控件类型名称
         /// </summary>
-        public const string EditorName = "LenovoRepositoryItemTextEdit";
+        public const string EditorName = "LenovoRepositoryItemSearchControl";
 
         /// <summary>
         /// 控件类型名称
@@ -26,7 +26,7 @@ namespace Lenovo.Repository
         /// <summary>
         /// 是否开启空值提示(水印文字)
         /// </summary>
-        [DefaultValue(true)]
+        //[DefaultValue(true)]
         [DXCategory("Behavior")]
         [Localizable(true)]
         public override bool NullValuePromptShowForEmptyValue
@@ -39,11 +39,11 @@ namespace Lenovo.Repository
             }
         }
 
-        private string m_NullValuePrompt = "请输入";
+        private string m_NullValuePrompt = "请输入搜索内容";
         /// <summary>
         /// 空值提示信息(水印文字)
         /// </summary>
-        [DefaultValue("请输入")]
+        //[DefaultValue("请输入搜索内容")]
         [DXCategory("Behavior")]
         [Localizable(true)]
         public override string NullValuePrompt
@@ -59,7 +59,7 @@ namespace Lenovo.Repository
         /// <summary>
         /// 默认构造
         /// </summary>
-        public LenovoRepositoryItemTextEdit()
+        public LenovoRepositoryItemSearchControl()
         {
             SetDefaultAppearance();
         }
@@ -67,7 +67,7 @@ namespace Lenovo.Repository
         /// <summary>
         /// 静态构造:用于控件注册
         /// </summary>
-        static LenovoRepositoryItemTextEdit()
+        static LenovoRepositoryItemSearchControl()
         {
             RegisterEditor();
         }
@@ -79,8 +79,8 @@ namespace Lenovo.Repository
         {
             System.Drawing.Image img = null;
             EditorRegistrationInfo.Default.Editors.Add(new EditorClassInfo(EditorName,
-              typeof(LenovoTextEdit), typeof(LenovoRepositoryItemTextEdit),
-              typeof(TextEditViewInfo), new TextEditPainter(), true, img));
+              typeof(LenovoSearchControl), typeof(LenovoRepositoryItemSearchControl),
+              typeof(SearchControlViewInfo), new ButtonEditPainter(), true, EditImageIndexes.MemoEdit, typeof(DevExpress.Accessibility.PopupEditAccessible)));
         }
 
         private void SetDefaultAppearance()
@@ -120,18 +120,22 @@ namespace Lenovo.Repository
         /// <param name="item"></param>
         public override void Assign(RepositoryItem item)
         {
-            LenovoRepositoryItemTextEdit source = item as LenovoRepositoryItemTextEdit;
+            LenovoRepositoryItemSearchControl source = item as LenovoRepositoryItemSearchControl;
             BeginUpdate();
             try
             {
                 base.Assign(item);
                 if (source == null) return;
+                //m_NullValuePrompt = source.NullValuePrompt;
+                //m_NullValuePromptShowForEmptyValue = source.NullValuePromptShowForEmptyValue;
+                //this.Mask.Assign(source.Mask);
             }
             finally
             {
                 EndUpdate();
-
             }
+            //Events.AddHandler(spin, source.Events[spin]);
+            //Events.AddHandler(beforeShowMenu, source.Events[beforeShowMenu]);
         }
     }
 }
