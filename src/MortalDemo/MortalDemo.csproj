@@ -112,7 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MortalControl.Dev\MortalControl.Dev.csproj">
-      <Project>{A0947880-AB89-4B6C-BC89-42942732EDAF}</Project>
+      <Project>{a0947880-ab89-4b6c-bc89-42942732edaf}</Project>
       <Name>MortalControl.Dev</Name>
     </ProjectReference>
     <ProjectReference Include="..\MortalControl\Mortal.Parts.csproj">
