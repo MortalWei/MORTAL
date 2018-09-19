@@ -29,12 +29,10 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.lenovoTextEdit1 = new Lenovo.XtraEditors.LenovoTextEdit();
-            this.lenovoMemoEdit1 = new Lenovo.XtraEditors.LenovoMemoEdit();
             this.lenovoLookUpEdit1 = new Lenovo.XtraEditors.LenovoLookUpEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.lenovoTextEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lenovoMemoEdit1.Properties)).BeginInit();
+            this.lenovoMemoEdit1 = new Lenovo.XtraEditors.LenovoMemoEdit();
             ((System.ComponentModel.ISupportInitialize)(this.lenovoLookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lenovoMemoEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -46,14 +44,17 @@
             this.button1.Text = "关闭";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // lenovoTextEdit1
+            // lenovoLookUpEdit1
             // 
-            this.lenovoTextEdit1.Location = new System.Drawing.Point(13, 68);
-            this.lenovoTextEdit1.Name = "lenovoTextEdit1";
-            this.lenovoTextEdit1.Properties.NullValuePrompt = "请输入";
-            this.lenovoTextEdit1.Properties.NullValuePromptShowForEmptyValue = true;
-            this.lenovoTextEdit1.Size = new System.Drawing.Size(100, 20);
-            this.lenovoTextEdit1.TabIndex = 5;
+            this.lenovoLookUpEdit1.Location = new System.Drawing.Point(13, 69);
+            this.lenovoLookUpEdit1.Name = "lenovoLookUpEdit1";
+            this.lenovoLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lenovoLookUpEdit1.Properties.NullText = "";
+            this.lenovoLookUpEdit1.Properties.NullValuePrompt = "请选择";
+            this.lenovoLookUpEdit1.Properties.NullValuePromptShowForEmptyValue = true;
+            this.lenovoLookUpEdit1.Size = new System.Drawing.Size(100, 20);
+            this.lenovoLookUpEdit1.TabIndex = 7;
             // 
             // lenovoMemoEdit1
             // 
@@ -64,18 +65,6 @@
             this.lenovoMemoEdit1.Size = new System.Drawing.Size(100, 96);
             this.lenovoMemoEdit1.TabIndex = 6;
             // 
-            // lenovoLookUpEdit1
-            // 
-            this.lenovoLookUpEdit1.Location = new System.Drawing.Point(119, 68);
-            this.lenovoLookUpEdit1.Name = "lenovoLookUpEdit1";
-            this.lenovoLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lenovoLookUpEdit1.Properties.NullText = "";
-            this.lenovoLookUpEdit1.Properties.NullValuePrompt = "请选择";
-            this.lenovoLookUpEdit1.Properties.NullValuePromptShowForEmptyValue = true;
-            this.lenovoLookUpEdit1.Size = new System.Drawing.Size(100, 20);
-            this.lenovoLookUpEdit1.TabIndex = 7;
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -83,23 +72,20 @@
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.lenovoLookUpEdit1);
             this.Controls.Add(this.lenovoMemoEdit1);
-            this.Controls.Add(this.lenovoTextEdit1);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form2_Paint);
-            ((System.ComponentModel.ISupportInitialize)(this.lenovoTextEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lenovoMemoEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lenovoLookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lenovoMemoEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Button button1;
-        private Lenovo.XtraEditors.LenovoTextEdit lenovoTextEdit1;
         private Lenovo.XtraEditors.LenovoMemoEdit lenovoMemoEdit1;
         private Lenovo.XtraEditors.LenovoLookUpEdit lenovoLookUpEdit1;
         //private Lenovo.XtraEditors.LenovoTreeListLookUpEdit lenovoTreeListLookUpEdit1;
