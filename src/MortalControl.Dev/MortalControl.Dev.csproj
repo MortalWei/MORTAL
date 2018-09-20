@@ -75,6 +75,8 @@
     <Compile Include="Repository\LenovoRepositoryItemMemoEdit.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Tools\LenovoGridStyleApi.cs" />
+    <Compile Include="Tools\LenovoTreeStyleApi.cs" />
     <Compile Include="XtraEditors\GridMultiLookUpEdit.cs">
       <SubType>Component</SubType>
     </Compile>
