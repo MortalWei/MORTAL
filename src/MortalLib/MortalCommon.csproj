@@ -50,6 +50,7 @@
     <Compile Include="Interface\IPresenter.cs" />
     <Compile Include="Interface\IView.cs" />
     <Compile Include="Performs\PresenterBinder.cs" />
+    <Compile Include="Performs\RealizationBinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Realization\Presenter.cs" />
   </ItemGroup>

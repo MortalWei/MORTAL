@@ -15,6 +15,7 @@ namespace Lenovo.XtraEditors
         /// </summary>
         public LenovoTextEdit() : base()
         {
+            
         }
 
         /// <summary>

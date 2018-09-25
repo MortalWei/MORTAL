@@ -10,7 +10,7 @@ namespace Lenovo.XtraEditors.Tools
 {
     public class LenovoTreeStyleApi
     {
-        public static void SetBasicStyle(TreeList treeList)
+        public static void SetBasicStyle(TreeList treeList, bool loadStatus = false)
         {
             if (treeList == null) return;
             treeList.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -101,38 +101,14 @@ namespace Lenovo.XtraEditors.Tools
             treeList.Appearance.FixedLine.ForeColor = System.Drawing.Color.FromArgb(198, 198, 198);
             treeList.Appearance.FixedLine.Options.UseBackColor = true;
             treeList.Appearance.FixedLine.Options.UseForeColor = true;
+
+            if (loadStatus) SetBasicStatusStyle(treeList);
         }
 
         public static void SetBasicStatusStyle(TreeList treeList)
         {
             //0:无效 1:有效 9:新增 10:删除
-            StyleFormatCondition styleNewly = new StyleFormatCondition();
-            styleNewly.Appearance.BackColor = Color.FromArgb(215, 235, 255);
-            styleNewly.Appearance.ForeColor = Color.FromArgb(22, 23, 35);
-            styleNewly.Appearance.Options.UseBackColor = true;
-            styleNewly.Appearance.Options.UseForeColor = true;
-            styleNewly.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
-            styleNewly.Expression = "Status == 9";
-            treeList.FormatConditions.Add(styleNewly);
-
-            StyleFormatCondition styleSaved = new StyleFormatCondition();
-            styleSaved.Appearance.BackColor = Color.White;
-            styleSaved.Appearance.ForeColor = Color.FromArgb(22, 23, 35);
-            styleSaved.Appearance.Options.UseBackColor = true;
-            styleSaved.Appearance.Options.UseForeColor = true;
-            styleSaved.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
-            styleSaved.Expression = "Status == 1";
-            treeList.FormatConditions.Add(styleSaved);
-
-            StyleFormatCondition styleChanged = new StyleFormatCondition();
-            styleChanged.Appearance.BackColor = System.Drawing.Color.FromArgb(196, 225, 255);
-            styleChanged.Appearance.ForeColor = System.Drawing.Color.FromArgb(22, 23, 35);
-            styleChanged.Appearance.Options.UseBackColor = true;
-            styleChanged.Appearance.Options.UseForeColor = true;
-            styleChanged.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
-            styleChanged.Expression = "Status != 9 && IsChanged == true";
-            treeList.FormatConditions.Add(styleChanged);
-
+            //无效
             StyleFormatCondition styleStop = new StyleFormatCondition();
             styleStop.Appearance.BackColor = Color.FromArgb(198, 198, 198);
             styleStop.Appearance.ForeColor = Color.FromArgb(134, 136, 142);
@@ -143,6 +119,49 @@ namespace Lenovo.XtraEditors.Tools
             styleStop.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
             styleStop.Expression = "Status == 0 || Status == 10";
             treeList.FormatConditions.Add(styleStop);
+
+            //有效
+            StyleFormatCondition styleSaved = new StyleFormatCondition();
+            styleSaved.Appearance.BackColor = Color.White;
+            styleSaved.Appearance.ForeColor = Color.FromArgb(22, 23, 35);
+            styleSaved.Appearance.Options.UseBackColor = true;
+            styleSaved.Appearance.Options.UseForeColor = true;
+            styleSaved.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            styleSaved.Expression = "Status == 1";
+            treeList.FormatConditions.Add(styleSaved);
+
+            //新增
+            StyleFormatCondition styleNewly = new StyleFormatCondition();
+            styleNewly.Appearance.BackColor = Color.FromArgb(215, 235, 255);
+            styleNewly.Appearance.ForeColor = Color.FromArgb(22, 23, 35);
+            styleNewly.Appearance.Options.UseBackColor = true;
+            styleNewly.Appearance.Options.UseForeColor = true;
+            styleNewly.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            styleNewly.Expression = "Status == 9";
+            treeList.FormatConditions.Add(styleNewly);
+
+            //修改
+            //修改-有效
+            StyleFormatCondition styleChanged = new StyleFormatCondition();
+            styleChanged.Appearance.BackColor = System.Drawing.Color.FromArgb(196, 225, 255);
+            styleChanged.Appearance.ForeColor = System.Drawing.Color.FromArgb(22, 23, 35);
+            styleChanged.Appearance.Options.UseBackColor = true;
+            styleChanged.Appearance.Options.UseForeColor = true;
+            styleChanged.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            styleChanged.Expression = "(Status == 0 || Status == 1) && IsChanged == true";
+            treeList.FormatConditions.Add(styleChanged);
+            //修改-删除
+            StyleFormatCondition styleDeleted = new StyleFormatCondition();
+            styleDeleted.Appearance.BackColor = System.Drawing.Color.FromArgb(196, 225, 255);
+            styleDeleted.Appearance.ForeColor = Color.FromArgb(134, 136, 142);
+            styleDeleted.Appearance.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Pixel);
+            styleDeleted.Appearance.Options.UseBackColor = true;
+            styleDeleted.Appearance.Options.UseForeColor = true;
+            styleDeleted.Appearance.Options.UseFont = true;
+            styleDeleted.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            styleDeleted.Expression = "Status == 10 && IsChanged == true";
+            treeList.FormatConditions.Add(styleDeleted);
+
         }
     }
 }
