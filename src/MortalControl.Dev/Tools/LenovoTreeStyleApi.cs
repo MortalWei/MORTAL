@@ -1,10 +1,6 @@
 ﻿using DevExpress.XtraTreeList;
 using DevExpress.XtraTreeList.StyleFormatConditions;
-using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 
 namespace Lenovo.XtraEditors.Tools
 {

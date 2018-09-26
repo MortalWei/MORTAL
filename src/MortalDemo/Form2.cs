@@ -103,7 +103,8 @@ namespace MortalDemo
                 .Select(type => (IGridColumnEventArgs)Activator.CreateInstance(type)).ToList();
 
             var interfaceImplements2 = System.Reflection.Assembly.GetExecutingAssembly().GetTypes()
-                .Where(item => item.GetInterfaces().Contains(typeof(IGridColumnEventArgs)) && item.Namespace == "MortalDemo.HYGrid").ToList();
+                .Where(item => item.GetInterfaces().Contains(typeof(IGridColumnEventArgs)) && item.Namespace == "MortalDemo.HYGrid.HY")
+                .Select(type => (IGridColumnEventArgs)Activator.CreateInstance(type)).ToList();
 
             //---------------------
 

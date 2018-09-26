@@ -18,19 +18,35 @@ namespace MortalLib.Performs
         /// <returns></returns>
         public static List<T> GetRealization<T>(string nameSpace = "")
         {
-            if (typeof(T).IsInterface) return null;
+            if (!typeof(T).IsInterface) return null;
+            //if (string.IsNullOrEmpty(nameSpace))
+            //{
+            //    return System.Reflection.Assembly.GetExecutingAssembly().GetTypes()
+            //        .Where(item => item.GetInterfaces().Contains(typeof(T)))
+            //        .Select(type => (T)Activator.CreateInstance(type)).ToList();
+            //}
+            //else
+            //{
+            //    return System.Reflection.Assembly.GetExecutingAssembly().GetTypes()
+            //        .Where(item => item.GetInterfaces().Contains(typeof(T)) && item.Namespace.Equals(nameSpace))
+            //        .Select(type => (T)Activator.CreateInstance(type)).ToList();
+            //}
+
             if (string.IsNullOrEmpty(nameSpace))
             {
-                return System.Reflection.Assembly.GetExecutingAssembly().GetTypes()
+                return AppDomain.CurrentDomain.GetAssemblies().SelectMany(item => item.GetTypes())
                     .Where(item => item.GetInterfaces().Contains(typeof(T)))
-                    .Select(type => (T)Activator.CreateInstance(type)).ToList();
+                    .Select(type => (T)Activator.CreateInstance(type))
+                    .ToList();
             }
             else
             {
-                return System.Reflection.Assembly.GetExecutingAssembly().GetTypes()
+                return AppDomain.CurrentDomain.GetAssemblies().SelectMany(item => item.GetTypes())
                     .Where(item => item.GetInterfaces().Contains(typeof(T)) && item.Namespace.Equals(nameSpace))
-                    .Select(type => (T)Activator.CreateInstance(type)).ToList();
+                    .Select(type => (T)Activator.CreateInstance(type))
+                    .ToList();
             }
+
         }
     }
 }

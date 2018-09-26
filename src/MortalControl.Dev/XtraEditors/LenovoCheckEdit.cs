@@ -1,6 +1,5 @@
 ﻿using DevExpress.XtraEditors;
 using System.ComponentModel;
-using System.Windows.Forms;
 using System.Drawing;
 
 namespace Lenovo.XtraEditors

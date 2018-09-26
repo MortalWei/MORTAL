@@ -1,4 +1,6 @@
 ﻿using DevExpress.XtraGrid;
+using Lenovo.XtraEditors.IEventArgs;
+using System.Collections.Generic;
 
 namespace Lenovo.XtraEditors.Tools
 {
@@ -7,7 +9,7 @@ namespace Lenovo.XtraEditors.Tools
         /// <summary>
         /// 设置Grid基础样式
         /// </summary>
-        public static void SetBasicStyle(GridControl gridControl, bool loadStatus = false)
+        public static void SetBasicStyle(GridControl gridControl, bool loadStatus = false, List<IGridColumnEventArgs> eventArgs = null)
         {
             if (gridControl == null) return;
             if (gridControl.Views.Count == 0) return;
@@ -24,6 +26,16 @@ namespace Lenovo.XtraEditors.Tools
                 {
                     SetBasicStyle(gridView: gridView as DevExpress.XtraGrid.Views.Grid.GridView, loadStatus: loadStatus);
                 }
+                if (eventArgs != null) SetColumnEvent(gridView as DevExpress.XtraGrid.Views.Grid.GridView, eventArgs);
+            }
+        }
+
+        private static void SetColumnEvent(DevExpress.XtraGrid.Views.Grid.GridView gridView, List<IGridColumnEventArgs> eventArgs)
+        {
+            var _Cols = gridView.Columns;
+            foreach (DevExpress.XtraGrid.Columns.GridColumn column in _Cols)
+            {
+                column.Tag = eventArgs.Find(c => c.FieldName == column.FieldName);
             }
         }
 
