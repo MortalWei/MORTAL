@@ -3,8 +3,15 @@ using DevExpress.XtraBars.Ribbon;
 
 namespace Lenovo.XtraEditors.Tools
 {
+    /// <summary>
+    /// RibbonControl Style Api
+    /// </summary>
     public class LenovoRibbonStyleApi
     {
+        /// <summary>
+        /// RibbonControl Default Style
+        /// </summary>
+        /// <param name="control"></param>
         public static void SetBasicStyle(RibbonControl control)
         {
             if (control == null) return;

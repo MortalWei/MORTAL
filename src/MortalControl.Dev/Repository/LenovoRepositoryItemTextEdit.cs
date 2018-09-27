@@ -9,6 +9,9 @@ using System.Drawing;
 
 namespace Lenovo.Repository
 {
+    /// <summary>
+    /// Represents a repository item which contains settings specific to DevExpress.XtraEditors.TextEdit
+    /// </summary>
     [UserRepositoryItem("LenovoRepositoryItemTextEdit")]
     public class LenovoRepositoryItemTextEdit : RepositoryItemTextEdit
     {

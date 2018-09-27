@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace Lenovo.XtraEditors.IEventArgs
 {
     /// <summary>
@@ -66,14 +65,14 @@ namespace Lenovo.XtraEditors.IEventArgs
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void ShownEditor(object sender, EventArgs e);
+        void ShownEditor(object sender, System.EventArgs e);
 
         /// <summary>
         /// 关闭编辑器之后
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void HiddenEditor(object sender, EventArgs e);
+        void HiddenEditor(object sender, System.EventArgs e);
 
         /// <summary>
         /// 鼠标点击

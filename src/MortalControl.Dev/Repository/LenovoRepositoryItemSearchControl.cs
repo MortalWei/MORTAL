@@ -9,6 +9,9 @@ using System.Drawing;
 
 namespace Lenovo.Repository
 {
+    /// <summary>
+    /// Represents a storage for the settings specific to the DevExpress.XtraEditors.SearchControl.
+    /// </summary>
     [UserRepositoryItem("LenovoRepositoryItemSearchControl")]
     public class LenovoRepositoryItemSearchControl : RepositoryItemSearchControl
     {

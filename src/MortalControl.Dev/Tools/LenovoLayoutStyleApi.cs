@@ -2,8 +2,16 @@
 
 namespace Lenovo.XtraEditors.Tools
 {
+    /// <summary>
+    /// LyoutControl Style Api
+    /// </summary>
     public class LenovoLayoutStyleApi
     {
+        /// <summary>
+        /// Set LayoutControl Deafult Style
+        /// </summary>
+        /// <param name="layoutControl">Control</param>
+        /// <param name="loadControls">Whether Load Child Control Style</param>
         public static void SetBasicStyle(LayoutControl layoutControl, bool loadControls = false)
         {
             if (layoutControl == null) return;

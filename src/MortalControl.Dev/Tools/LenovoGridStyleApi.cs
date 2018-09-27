@@ -1,15 +1,20 @@
 ﻿using DevExpress.XtraGrid;
 using Lenovo.XtraEditors.IEventArgs;
-using System.Collections.Generic;
 
 namespace Lenovo.XtraEditors.Tools
 {
+    /// <summary>
+    /// GridControl Style Api
+    /// </summary>
     public class LenovoGridStyleApi
     {
         /// <summary>
-        /// 设置Grid基础样式
+        /// Set GridControl Deafult Style
+        /// <param name="gridControl">Control</param>
+        /// <param name="loadStatus">Whether Load Default Status Style</param>
+        /// <param name="eventArgs">Column Event Args</param>
         /// </summary>
-        public static void SetBasicStyle(GridControl gridControl, bool loadStatus = false, List<IGridColumnEventArgs> eventArgs = null)
+        public static void SetBasicStyle(GridControl gridControl, bool loadStatus = false, System.Collections.Generic.List<IGridColumnEventArgs> eventArgs = null)
         {
             if (gridControl == null) return;
             if (gridControl.Views.Count == 0) return;
@@ -30,7 +35,7 @@ namespace Lenovo.XtraEditors.Tools
             }
         }
 
-        private static void SetColumnEvent(DevExpress.XtraGrid.Views.Grid.GridView gridView, List<IGridColumnEventArgs> eventArgs)
+        private static void SetColumnEvent(DevExpress.XtraGrid.Views.Grid.GridView gridView, System.Collections.Generic.List<IGridColumnEventArgs> eventArgs)
         {
             var _Cols = gridView.Columns;
             foreach (DevExpress.XtraGrid.Columns.GridColumn column in _Cols)
@@ -127,7 +132,7 @@ namespace Lenovo.XtraEditors.Tools
             SetBasicStyle(gridView: bandedGridView, loadStatus: loadStatus);
         }
 
-        public static void SetBasicStatusStyle(DevExpress.XtraGrid.Views.Grid.GridView gridView)
+        private static void SetBasicStatusStyle(DevExpress.XtraGrid.Views.Grid.GridView gridView)
         {
             //0:无效 1:有效 9:新增 10:删除
             //无效

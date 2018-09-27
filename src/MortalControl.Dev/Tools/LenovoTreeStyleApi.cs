@@ -1,11 +1,18 @@
 ﻿using DevExpress.XtraTreeList;
 using DevExpress.XtraTreeList.StyleFormatConditions;
-using System.Drawing;
 
 namespace Lenovo.XtraEditors.Tools
 {
+    /// <summary>
+    /// TreeList Style Api
+    /// </summary>
     public class LenovoTreeStyleApi
     {
+        /// <summary>
+        /// TreeList Default Style
+        /// </summary>
+        /// <param name="treeList">Control</param>
+        /// <param name="loadStatus">Whether Load Default Status Style</param>
         public static void SetBasicStyle(TreeList treeList, bool loadStatus = false)
         {
             if (treeList == null) return;
@@ -101,13 +108,13 @@ namespace Lenovo.XtraEditors.Tools
             if (loadStatus) SetBasicStatusStyle(treeList);
         }
 
-        public static void SetBasicStatusStyle(TreeList treeList)
+        private static void SetBasicStatusStyle(TreeList treeList)
         {
             //0:无效 1:有效 9:新增 10:删除
             //无效
             StyleFormatCondition styleStop = new StyleFormatCondition();
-            styleStop.Appearance.BackColor = Color.FromArgb(198, 198, 198);
-            styleStop.Appearance.ForeColor = Color.FromArgb(134, 136, 142);
+            styleStop.Appearance.BackColor = System.Drawing.Color.FromArgb(198, 198, 198);
+            styleStop.Appearance.ForeColor = System.Drawing.Color.FromArgb(134, 136, 142);
             styleStop.Appearance.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Pixel);
             styleStop.Appearance.Options.UseBackColor = true;
             styleStop.Appearance.Options.UseForeColor = true;
@@ -118,8 +125,8 @@ namespace Lenovo.XtraEditors.Tools
 
             //有效
             StyleFormatCondition styleSaved = new StyleFormatCondition();
-            styleSaved.Appearance.BackColor = Color.White;
-            styleSaved.Appearance.ForeColor = Color.FromArgb(22, 23, 35);
+            styleSaved.Appearance.BackColor = System.Drawing.Color.White;
+            styleSaved.Appearance.ForeColor = System.Drawing.Color.FromArgb(22, 23, 35);
             styleSaved.Appearance.Options.UseBackColor = true;
             styleSaved.Appearance.Options.UseForeColor = true;
             styleSaved.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
@@ -128,8 +135,8 @@ namespace Lenovo.XtraEditors.Tools
 
             //新增
             StyleFormatCondition styleNewly = new StyleFormatCondition();
-            styleNewly.Appearance.BackColor = Color.FromArgb(215, 235, 255);
-            styleNewly.Appearance.ForeColor = Color.FromArgb(22, 23, 35);
+            styleNewly.Appearance.BackColor = System.Drawing.Color.FromArgb(215, 235, 255);
+            styleNewly.Appearance.ForeColor = System.Drawing.Color.FromArgb(22, 23, 35);
             styleNewly.Appearance.Options.UseBackColor = true;
             styleNewly.Appearance.Options.UseForeColor = true;
             styleNewly.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
@@ -149,7 +156,7 @@ namespace Lenovo.XtraEditors.Tools
             //修改-删除
             StyleFormatCondition styleDeleted = new StyleFormatCondition();
             styleDeleted.Appearance.BackColor = System.Drawing.Color.FromArgb(196, 225, 255);
-            styleDeleted.Appearance.ForeColor = Color.FromArgb(134, 136, 142);
+            styleDeleted.Appearance.ForeColor = System.Drawing.Color.FromArgb(134, 136, 142);
             styleDeleted.Appearance.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Pixel);
             styleDeleted.Appearance.Options.UseBackColor = true;
             styleDeleted.Appearance.Options.UseForeColor = true;
