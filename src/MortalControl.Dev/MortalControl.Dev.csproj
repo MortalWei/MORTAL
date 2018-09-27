@@ -74,6 +74,12 @@
     <Compile Include="IEventArgs\IGridColumnEventArgs.cs" />
     <Compile Include="IEventArgs\ITreeColumnEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\LenovoRepositoryItemCheckEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Repository\LenovoRepositoryItemLookUpEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Repository\LenovoRepositoryItemTextEdit.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -83,17 +89,20 @@
     <Compile Include="Repository\LenovoRepositoryItemMemoEdit.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Repository\LenovoRepositoryItemGridLookUpEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Tools\LenovoGridStyleApi.cs" />
     <Compile Include="Tools\LenovoLayoutStyleApi.cs" />
     <Compile Include="Tools\LenovoRibbonStyleApi.cs" />
     <Compile Include="Tools\LenovoTreeStyleApi.cs" />
-    <Compile Include="XtraEditors\GridMultiLookUpEdit.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="XtraEditors\LenovoCheckEdit.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="XtraEditors\LenovoGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraEditors\LenovoGridLookUpEdit.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="XtraEditors\LenovoLookUpEdit.cs">
@@ -109,9 +118,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="XtraEditors\LenovoTreeListLookUpEdit.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="XtraEditors\RepositoryItemGridMultiLookUpEdit.cs">
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>

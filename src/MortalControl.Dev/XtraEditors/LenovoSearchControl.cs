@@ -1,5 +1,5 @@
 ﻿using DevExpress.XtraEditors;
-using Lenovo.Repository;
+using Lenovo.XtraEditors.Repository;
 using System.ComponentModel;
 using System.Drawing;
 
@@ -13,7 +13,7 @@ namespace Lenovo.XtraEditors
         /// <summary>
         /// 默认构造
         /// </summary>
-        public LenovoSearchControl() 
+        public LenovoSearchControl()
         {
         }
 

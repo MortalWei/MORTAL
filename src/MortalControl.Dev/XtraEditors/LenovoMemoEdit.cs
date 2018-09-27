@@ -1,5 +1,5 @@
 ﻿using DevExpress.XtraEditors;
-using Lenovo.Repository;
+using Lenovo.XtraEditors.Repository;
 using System.ComponentModel;
 using System.Drawing;
 

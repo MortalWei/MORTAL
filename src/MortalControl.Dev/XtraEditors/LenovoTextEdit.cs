@@ -1,5 +1,5 @@
 ﻿using DevExpress.XtraEditors;
-using Lenovo.Repository;
+using Lenovo.XtraEditors.Repository;
 using System.ComponentModel;
 using System.Drawing;
 
@@ -15,7 +15,7 @@ namespace Lenovo.XtraEditors
         /// </summary>
         public LenovoTextEdit() : base()
         {
-            
+
         }
 
         /// <summary>
@@ -34,7 +34,6 @@ namespace Lenovo.XtraEditors
         public override Font Font
         {
             get { return m_Font; }
-
             set { m_Font = value; }
         }
 

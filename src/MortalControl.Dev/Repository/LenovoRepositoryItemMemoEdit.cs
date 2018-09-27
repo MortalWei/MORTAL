@@ -7,7 +7,7 @@ using Lenovo.XtraEditors;
 using System.ComponentModel;
 using System.Drawing;
 
-namespace Lenovo.Repository
+namespace Lenovo.XtraEditors.Repository
 {
     /// <summary>
     /// Represents a class which stores settings specific to a DevExpress.XtraEditors.MemoEdit
@@ -115,6 +115,8 @@ namespace Lenovo.Repository
             AppearanceReadOnly.ForeColor = Color.FromArgb(22, 23, 35);
             AppearanceReadOnly.Options.UseBackColor = true;
             AppearanceReadOnly.Options.UseForeColor = true;
+
+            //appearance
         }
 
         /// <summary>
