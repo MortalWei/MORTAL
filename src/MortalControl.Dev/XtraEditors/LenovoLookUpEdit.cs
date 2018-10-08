@@ -1,4 +1,4 @@
-﻿using DevExpress.XtraEditors;
+﻿    using DevExpress.XtraEditors;
 using Lenovo.XtraEditors.Repository;
 using System.ComponentModel;
 using System.Drawing;
@@ -36,6 +36,7 @@ namespace Lenovo.XtraEditors
         /// <summary>
         /// 编辑器设置
         /// </summary>
-        private new LenovoRepositoryItemLookUpEdit Properties { get { return base.Properties as LenovoRepositoryItemLookUpEdit; } }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
+        public new LenovoRepositoryItemLookUpEdit Properties { get { return base.Properties as LenovoRepositoryItemLookUpEdit; } }
     }
 }

@@ -78,6 +78,7 @@
     </Compile>
     <Compile Include="Helpers\ColumnArgs2.cs" />
     <Compile Include="Helpers\ColumnArgs1.cs" />
+    <Compile Include="Helpers\NameHelper.cs" />
     <Compile Include="Helpers\WriteTxtHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

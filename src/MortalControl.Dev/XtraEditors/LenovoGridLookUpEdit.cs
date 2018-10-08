@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Reflection;
+using System.Windows.Forms;
 
 namespace Lenovo.XtraEditors
 {
@@ -34,6 +36,11 @@ namespace Lenovo.XtraEditors
 
         }
 
+        static LenovoGridLookUpEdit()
+        {
+            LenovoRepositoryItemGridLookUpEdit.RegisterEditor();
+        }
+
         private Font m_Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
         /// <summary>
         /// 定义特定的文本格式，包括字体、字号和字形属性。
@@ -48,7 +55,8 @@ namespace Lenovo.XtraEditors
         /// <summary>
         /// 编辑器设置
         /// </summary>
-        private new LenovoRepositoryItemGridLookUpEdit Properties { get { return base.Properties as LenovoRepositoryItemGridLookUpEdit; } }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
+        public new LenovoRepositoryItemGridLookUpEdit Properties { get { return base.Properties as LenovoRepositoryItemGridLookUpEdit; } }
 
         /// <summary>
         /// 控件大小改变后同步改变编辑器大小
@@ -76,20 +84,57 @@ namespace Lenovo.XtraEditors
 
         private void LenovoGridLookUpEdit_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
         {
-
+            if (Properties.View.RowCount == 0 || Text.Trim() == "")
+            {
+                EditValue = DBNull.Value;
+            }
+            Popup -= LenovoGridLookUpEdit_Popup;
+            EditValueChanging -= LenovoGridLookUpEdit_EditValueChanging;
+            KeyUp -= LenovoGridLookUpEdit_KeyUp;
+            Closed -= LenovoGridLookUpEdit_Closed;
         }
 
         private void LenovoGridLookUpEdit_KeyUp(object sender, System.Windows.Forms.KeyEventArgs e)
         {
-
+            if (Properties.TextEditStyle == DevExpress.XtraEditors.Controls.TextEditStyles.Standard)
+            {
+                if (!IsPopupOpen)
+                {
+                    try
+                    {
+                        //if (EditValue != null && EditValue.ToString().Length > 0)
+                        //{
+                        //    ClosePopup();
+                        //}
+                        //else
+                        //{
+                        if (e.KeyData == Keys.Escape || e.KeyData == Keys.Return || e.Control || e.Alt || e.Shift)
+                        {
+                            if (e.KeyData == Keys.Escape) { Properties.IsEscape = true; }
+                            ClosePopup();
+                            SelectAll();
+                        }
+                        else
+                        {
+                            if ((e.KeyCode.GetHashCode() >= 65 && e.KeyCode.GetHashCode() <= 90) ||
+                            (e.KeyCode.GetHashCode() >= 48 && e.KeyCode.GetHashCode() <= 57) ||
+                            (e.KeyCode.GetHashCode() >= 97 && e.KeyCode.GetHashCode() <= 105) ||
+                            e.KeyCode.GetHashCode() == 91 ||
+                            e.KeyCode.GetHashCode() == 8 ||
+                            (EditValue != null && EditValue.ToString().Length > 0 &&
+                            EditValue.ToString().Substring(EditValue.ToString().Length - 1, 1) == "?"))
+                            {
+                                ShowPopup();
+                            }
+                        }
+                    }
+                    //}
+                    catch { };
+                }
+            }
         }
 
         private void LenovoGridLookUpEdit_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
-        {
-
-        }
-
-        private void LenovoGridLookUpEdit_Popup(object sender, EventArgs e)
         {
             if (((LenovoGridLookUpEdit)sender).IsPopupOpen)
             {
@@ -98,6 +143,11 @@ namespace Lenovo.XtraEditors
                     FilterLookupGridLookUpEdit();
                 }));
             }
+        }
+
+        private void LenovoGridLookUpEdit_Popup(object sender, EventArgs e)
+        {
+            FilterLookupGridLookUpEdit();
         }
 
         private void FilterLookupGridLookUpEdit()
@@ -110,7 +160,7 @@ namespace Lenovo.XtraEditors
             {
                 foreach (DevExpress.XtraGrid.Columns.GridColumn column in Properties.View.Columns)
                 {
-                    _ListCriteriaOperator.Add(GetBinaryOperator(column.FieldName));
+                    _ListCriteriaOperator.Add(GetOperator(column.FieldName));
                 }
             }
             else
@@ -122,16 +172,23 @@ namespace Lenovo.XtraEditors
                     {
                         if (column.FieldName == filter)
                         {
-                            _ListCriteriaOperator.Add(GetBinaryOperator(filter));
+                            _ListCriteriaOperator.Add(GetOperator(filter));
                         }
                     }
                 }
             }
+
+            string filterCondition = new GroupOperator(GroupOperatorType.Or, _ListCriteriaOperator).ToString();
+            fi.SetValue(gridView, filterCondition);
+            MethodInfo mi = gridView.GetType().GetMethod("ApplyColumnsFilterEx", BindingFlags.NonPublic | BindingFlags.Instance);
+            mi.Invoke(gridView, null);
         }
 
-        private BinaryOperator GetBinaryOperator(string filter)
+        private CriteriaOperator GetOperator(string filter)
         {
-            return new BinaryOperator(filter, "%" + AutoSearchText + "%", BinaryOperatorType.Like);
+            return new FunctionOperator(FunctionOperatorType.Contains,
+                          new OperandProperty(filter),
+                          new OperandValue(AutoSearchText));
         }
     }
 }

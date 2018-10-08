@@ -27,7 +27,7 @@ namespace Lenovo.XtraEditors.Repository
         /// <summary>
         /// 是否开启空值提示(水印文字)
         /// </summary>
-        [DefaultValue(true), Category("LenovoBehavior")]
+        [DefaultValue(true), Category("LenovoBehavior"), Description("是否显示水印文字")]
         [DXCategory("Behavior")]
         [Localizable(true)]
         public override bool NullValuePromptShowForEmptyValue
@@ -44,7 +44,7 @@ namespace Lenovo.XtraEditors.Repository
         /// <summary>
         /// 空值提示信息(水印文字)
         /// </summary>
-        [DefaultValue("请选择"), Category("LenovoBehavior")]
+        [DefaultValue("请选择"), Category("LenovoBehavior"), Description("水印文字内容")]
         [DXCategory("Behavior")]
         [Localizable(true)]
         public override string NullValuePrompt
@@ -73,7 +73,7 @@ namespace Lenovo.XtraEditors.Repository
         }
 
         private string m_FilterColumn = string.Empty;
-        [DefaultValue(""), Category("LenovoBehavior"), Description("设置筛选列，根据FieldName筛选，多列用|分割，查询方式FieldName加%，如 %工号|%姓名% 未指定属性则按照所有显示列筛选。")]
+        [DefaultValue(""), Category("LenovoBehavior"), Description("设置筛选列进行模糊匹配,多列以\"|\"分隔,如:Id|Name. 默认筛选搜索列")]
         [DXCategory("Behavior")]
         [Localizable(true)]
         public virtual string FilterColumn
@@ -82,6 +82,54 @@ namespace Lenovo.XtraEditors.Repository
             set
             {
                 m_FilterColumn = value;
+                OnPropertiesChanged();
+            }
+        }
+
+        private bool m_ShowFooter = false;
+        /// <summary>
+        /// Gets or sets whether the dropdown window's footer region is visible.
+        /// </summary>
+        [DefaultValue(false), Category("LenovoBehavior"), Description("是否显示Popup页脚")]
+        [DXCategory("Behavior")]
+        public override bool ShowFooter
+        {
+            get { return m_ShowFooter; }
+            set
+            {
+                m_ShowFooter = value;
+                OnPropertiesChanged();
+            }
+        }
+
+        private Size m_PopupFormMinSize = new Size(100, 100);
+        /// <summary>
+        /// Gets or sets the minimum size for the associated dropdown window.
+        /// </summary>
+        [Category("LenovoBehavior"), Description("Popup窗体最小值")]
+        [DXCategory("Behavior")]
+        public override Size PopupFormMinSize
+        {
+            get { return m_PopupFormMinSize; }
+
+            set
+            {
+                m_PopupFormMinSize = value == null ? new Size(100, 100) : value;
+                OnPropertiesChanged();
+            }
+        }
+
+        private bool m_PopupSizeable = false;
+        /// <summary>
+        /// Gets or sets a value indicating whether the dropdown window is sizeable.
+        /// </summary>
+        [DefaultValue(false), Category("LenovoBehavior"), Description("是否可以拖动Popup窗体大小")]
+        public override bool PopupSizeable
+        {
+            get { return m_PopupSizeable; }
+            set
+            {
+                m_PopupSizeable = value;
                 OnPropertiesChanged();
             }
         }
@@ -124,6 +172,9 @@ namespace Lenovo.XtraEditors.Repository
 
         private void SetDefaultAppearance()
         {
+            View.OptionsView.ShowFooter = false;
+            View.OptionsView.ShowIndicator = false;
+
             Appearance.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             Appearance.Options.UseFont = true;
             Appearance.BackColor = System.Drawing.Color.White;
@@ -178,7 +229,7 @@ namespace Lenovo.XtraEditors.Repository
         /// <param name="size"></param>
         internal void SetPopupFormSize(System.Drawing.Size size)
         {
-            PopupFormSize = new System.Drawing.Size(size.Width - 4, 60);
+            //PopupFormSize = new System.Drawing.Size(size.Width - 4, 60);
         }
     }
 }

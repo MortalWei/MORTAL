@@ -35,6 +35,7 @@ namespace Lenovo.XtraEditors
         /// <summary>
         /// 编辑器设置
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         public new LenovoRepositoryItemCheckEdit Properties { get { return base.Properties as LenovoRepositoryItemCheckEdit; } }
     }
 }

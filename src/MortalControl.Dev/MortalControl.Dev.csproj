@@ -96,6 +96,8 @@
     <Compile Include="Tools\LenovoLayoutStyleApi.cs" />
     <Compile Include="Tools\LenovoRibbonStyleApi.cs" />
     <Compile Include="Tools\LenovoTreeStyleApi.cs" />
+    <Compile Include="Utils\LenovoAppearanceObject.cs" />
+    <Compile Include="Utils\LenovoAppearanceOptions.cs" />
     <Compile Include="XtraEditors\LenovoCheckEdit.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -123,10 +125,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="XtraEditors\LenovoGridLookUpEdit.resx">
+      <DependentUpon>LenovoGridLookUpEdit.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Realizations\" />
-    <Folder Include="Utils\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
