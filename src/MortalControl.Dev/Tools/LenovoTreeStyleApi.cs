@@ -1,5 +1,7 @@
 ﻿using DevExpress.XtraTreeList;
+using DevExpress.XtraTreeList.Columns;
 using DevExpress.XtraTreeList.StyleFormatConditions;
+using Lenovo.XtraEditors.IEventArgs;
 
 namespace Lenovo.XtraEditors.Tools
 {
@@ -13,7 +15,7 @@ namespace Lenovo.XtraEditors.Tools
         /// </summary>
         /// <param name="treeList">Control</param>
         /// <param name="loadStatus">Whether Load Default Status Style</param>
-        public static void SetBasicStyle(TreeList treeList, bool loadStatus = false)
+        public static void SetBasicStyle(TreeList treeList, bool loadStatus = false, System.Collections.Generic.List<ITreeColumnEventArgs> eventArgs = null)
         {
             if (treeList == null) return;
             treeList.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -106,6 +108,8 @@ namespace Lenovo.XtraEditors.Tools
             treeList.Appearance.FixedLine.Options.UseForeColor = true;
 
             if (loadStatus) SetBasicStatusStyle(treeList);
+            SetColumnEvent(treeList, eventArgs);
+
         }
 
         private static void SetBasicStatusStyle(TreeList treeList)
@@ -165,6 +169,16 @@ namespace Lenovo.XtraEditors.Tools
             styleDeleted.Expression = "Status == 10 && IsChanged == true";
             treeList.FormatConditions.Add(styleDeleted);
 
+        }
+
+        private static void SetColumnEvent(TreeList treeList, System.Collections.Generic.List<ITreeColumnEventArgs> eventArgs)
+        {
+            if (treeList == null || eventArgs == null) return;
+            var _Cols = treeList.Columns;
+            foreach (TreeListColumn column in _Cols)
+            {
+                column.Tag = eventArgs.Find(c => c.FieldName == column.FieldName);
+            }
         }
     }
 }
