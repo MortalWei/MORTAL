@@ -1,4 +1,7 @@
-﻿using DevExpress.XtraGrid;
+﻿using System;
+using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Views.BandedGrid;
+using DevExpress.XtraGrid.Views.Grid;
 using Lenovo.XtraEditors.IEventArgs;
 
 namespace Lenovo.XtraEditors.Tools
@@ -33,6 +36,80 @@ namespace Lenovo.XtraEditors.Tools
                 }
                 if (eventArgs != null) SetColumnEvent(gridView as DevExpress.XtraGrid.Views.Grid.GridView, eventArgs);
             }
+        }
+
+        /// <summary>
+        /// Set Only Font Style
+        /// </summary>
+        /// <param name="gridControl"></param>
+        public static void SetFontStyle(GridControl gridControl)
+        {
+            if (gridControl == null) return;
+            if (gridControl.Views.Count == 0) return;
+            foreach (DevExpress.XtraGrid.Views.Base.BaseView gridView in gridControl.Views)
+            {
+                if (gridView is DevExpress.XtraGrid.Views.BandedGrid.BandedGridView
+                   ||
+                   gridView is DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView)
+                {
+                    SetFontStyle(bandedGridView: gridView as DevExpress.XtraGrid.Views.BandedGrid.BandedGridView);
+                }
+                else if (gridView is DevExpress.XtraGrid.Views.Grid.GridView)
+                {
+                    SetFontStyle(gridView: gridView as DevExpress.XtraGrid.Views.Grid.GridView);
+                }
+            }
+        }
+
+        private static void SetFontStyle(GridView gridView)
+        {
+            gridView.Appearance.HeaderPanel.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            gridView.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.FromArgb(134, 136, 142);
+            gridView.Appearance.HeaderPanel.Options.UseFont = true;
+            
+            gridView.Appearance.Row.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            gridView.Appearance.Row.ForeColor = System.Drawing.Color.FromArgb(22, 23, 35);
+            gridView.Appearance.Row.Options.UseFont = true;
+            
+            gridView.Appearance.FocusedCell.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            gridView.Appearance.FocusedCell.ForeColor = System.Drawing.Color.FromArgb(22, 23, 35);
+            gridView.Appearance.FocusedCell.Options.UseFont = true;
+            
+            gridView.Appearance.FocusedRow.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            gridView.Appearance.FocusedRow.ForeColor = System.Drawing.Color.FromArgb(22, 23, 35);
+            gridView.Appearance.FocusedRow.Options.UseFont = true;
+            
+            gridView.Appearance.SelectedRow.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            gridView.Appearance.SelectedRow.ForeColor = System.Drawing.Color.FromArgb(22, 23, 35);
+            gridView.Appearance.SelectedRow.Options.UseFont = true;
+            
+            gridView.Appearance.HideSelectionRow.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            gridView.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.FromArgb(22, 23, 35);
+            gridView.Appearance.HideSelectionRow.Options.UseFont = true;
+
+            gridView.Appearance.VertLine.BackColor = System.Drawing.Color.FromArgb(198, 198, 198);
+            gridView.Appearance.VertLine.ForeColor = System.Drawing.Color.FromArgb(198, 198, 198);
+            gridView.Appearance.VertLine.Options.UseBackColor = true;
+            gridView.Appearance.VertLine.Options.UseForeColor = true;
+
+            gridView.Appearance.HorzLine.BackColor = System.Drawing.Color.FromArgb(198, 198, 198);
+            gridView.Appearance.HorzLine.ForeColor = System.Drawing.Color.FromArgb(198, 198, 198);
+            gridView.Appearance.HorzLine.Options.UseBackColor = true;
+            gridView.Appearance.HorzLine.Options.UseForeColor = true;
+
+            gridView.Appearance.FixedLine.BackColor = System.Drawing.Color.FromArgb(198, 198, 198);
+            gridView.Appearance.FixedLine.ForeColor = System.Drawing.Color.FromArgb(198, 198, 198);
+            gridView.Appearance.FixedLine.Options.UseBackColor = true;
+            gridView.Appearance.FixedLine.Options.UseForeColor = true;
+        }
+
+        private static void SetFontStyle(BandedGridView bandedGridView)
+        {
+            bandedGridView.Appearance.BandPanel.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            bandedGridView.Appearance.BandPanel.ForeColor = System.Drawing.Color.FromArgb(134, 136, 142);
+            bandedGridView.Appearance.BandPanel.Options.UseFont = true;
+
+            SetFontStyle(gridView: bandedGridView);
         }
 
         private static void SetColumnEvent(DevExpress.XtraGrid.Views.Grid.GridView gridView, System.Collections.Generic.List<IGridColumnEventArgs> eventArgs)

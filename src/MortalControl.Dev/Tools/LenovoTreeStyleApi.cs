@@ -112,6 +112,63 @@ namespace Lenovo.XtraEditors.Tools
 
         }
 
+        /// <summary>
+        /// Only Edit Font Style
+        /// </summary>
+        /// <param name="treeList"></param>
+        public static void SetFontStyle(TreeList treeList)
+        {
+            if (treeList == null) return;
+            treeList.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            
+            treeList.Appearance.Row.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            treeList.Appearance.Row.ForeColor = System.Drawing.Color.FromArgb(22, 23, 35);
+            treeList.Appearance.Row.Options.UseFont = true;
+            
+            treeList.Appearance.HeaderPanel.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            treeList.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.FromArgb(134, 136, 142);
+            treeList.Appearance.HeaderPanel.Options.UseFont = true;
+            
+            treeList.Appearance.BandPanel.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            treeList.Appearance.BandPanel.ForeColor = System.Drawing.Color.FromArgb(134, 136, 142);
+            treeList.Appearance.BandPanel.Options.UseFont = true;
+            
+            treeList.Appearance.Caption.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            treeList.Appearance.Caption.ForeColor = System.Drawing.Color.FromArgb(134, 136, 142);
+            treeList.Appearance.Caption.Options.UseFont = true;
+            
+            treeList.Appearance.FocusedRow.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            treeList.Appearance.FocusedRow.ForeColor = System.Drawing.Color.FromArgb(22, 23, 35);
+            treeList.Appearance.FocusedRow.Options.UseFont = true;
+            
+            treeList.Appearance.FocusedCell.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            treeList.Appearance.FocusedCell.ForeColor = System.Drawing.Color.FromArgb(22, 23, 35);
+            treeList.Appearance.FocusedCell.Options.UseFont = true;
+            
+            treeList.Appearance.SelectedRow.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            treeList.Appearance.SelectedRow.ForeColor = System.Drawing.Color.FromArgb(22, 23, 35);
+            treeList.Appearance.SelectedRow.Options.UseFont = true;
+            
+            treeList.Appearance.HideSelectionRow.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            treeList.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.FromArgb(22, 23, 35);
+            treeList.Appearance.HideSelectionRow.Options.UseFont = true;
+
+            treeList.Appearance.VertLine.BackColor = System.Drawing.Color.FromArgb(198, 198, 198);
+            treeList.Appearance.VertLine.ForeColor = System.Drawing.Color.FromArgb(198, 198, 198);
+            treeList.Appearance.VertLine.Options.UseBackColor = true;
+            treeList.Appearance.VertLine.Options.UseForeColor = true;
+
+            treeList.Appearance.HorzLine.BackColor = System.Drawing.Color.FromArgb(198, 198, 198);
+            treeList.Appearance.HorzLine.ForeColor = System.Drawing.Color.FromArgb(198, 198, 198);
+            treeList.Appearance.HorzLine.Options.UseBackColor = true;
+            treeList.Appearance.HorzLine.Options.UseForeColor = true;
+
+            treeList.Appearance.FixedLine.BackColor = System.Drawing.Color.FromArgb(198, 198, 198);
+            treeList.Appearance.FixedLine.ForeColor = System.Drawing.Color.FromArgb(198, 198, 198);
+            treeList.Appearance.FixedLine.Options.UseBackColor = true;
+            treeList.Appearance.FixedLine.Options.UseForeColor = true;
+        }
+
         private static void SetBasicStatusStyle(TreeList treeList)
         {
             //0:无效 1:有效 9:新增 10:删除
@@ -171,7 +228,7 @@ namespace Lenovo.XtraEditors.Tools
 
         }
 
-        private static void SetColumnEvent(TreeList treeList, System.Collections.Generic.List<ITreeColumnEventArgs> eventArgs)
+        public static void SetColumnEvent(TreeList treeList, System.Collections.Generic.List<ITreeColumnEventArgs> eventArgs)
         {
             if (treeList == null || eventArgs == null) return;
             var _Cols = treeList.Columns;
