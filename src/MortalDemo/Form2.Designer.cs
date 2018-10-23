@@ -29,13 +29,10 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.lenovoSimpleButton1 = new Lenovo.XtraEditors.LenovoSimpleButton();
             this.lenovoGridLookUpEdit1 = new Lenovo.XtraEditors.LenovoGridLookUpEdit();
             this.lenovoGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lenovoGridLookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lenovoGridLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
@@ -50,28 +47,48 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pictureEdit1
+            // simpleButton1
             // 
-            this.pictureEdit1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureEdit1.EditValue = global::MortalDemo.Properties.Resources.载入中动画_时间轴改;
-            this.pictureEdit1.Location = new System.Drawing.Point(36, 149);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Properties.ZoomAccelerationFactor = 1D;
-            this.pictureEdit1.Size = new System.Drawing.Size(331, 107);
-            this.pictureEdit1.TabIndex = 3;
+            this.simpleButton1.Location = new System.Drawing.Point(262, 206);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(176, 23);
+            this.simpleButton1.TabIndex = 3;
+            this.simpleButton1.Text = "simpleButton1";
             // 
-            // pictureBox1
+            // lenovoSimpleButton1
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox1.Image = global::MortalDemo.Properties.Resources.载入中动画_时间轴改;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(36, 262);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(331, 107);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.lenovoSimpleButton1.Appearance.BackColor = System.Drawing.Color.White;
+            this.lenovoSimpleButton1.Appearance.BorderColor = System.Drawing.Color.Red;
+            this.lenovoSimpleButton1.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lenovoSimpleButton1.Appearance.Options.UseBackColor = true;
+            this.lenovoSimpleButton1.Appearance.Options.UseBorderColor = true;
+            this.lenovoSimpleButton1.Appearance.Options.UseForeColor = true;
+            this.lenovoSimpleButton1.AppearanceDisabled.BackColor = System.Drawing.Color.Silver;
+            this.lenovoSimpleButton1.AppearanceDisabled.BorderColor = System.Drawing.Color.Silver;
+            this.lenovoSimpleButton1.AppearanceDisabled.ForeColor = System.Drawing.Color.White;
+            this.lenovoSimpleButton1.AppearanceDisabled.Options.UseBackColor = true;
+            this.lenovoSimpleButton1.AppearanceDisabled.Options.UseBorderColor = true;
+            this.lenovoSimpleButton1.AppearanceDisabled.Options.UseForeColor = true;
+            this.lenovoSimpleButton1.AppearanceHovered.BackColor = System.Drawing.Color.Red;
+            this.lenovoSimpleButton1.AppearanceHovered.BorderColor = System.Drawing.Color.Red;
+            this.lenovoSimpleButton1.AppearanceHovered.ForeColor = System.Drawing.Color.White;
+            this.lenovoSimpleButton1.AppearanceHovered.Options.UseBackColor = true;
+            this.lenovoSimpleButton1.AppearanceHovered.Options.UseBorderColor = true;
+            this.lenovoSimpleButton1.AppearanceHovered.Options.UseForeColor = true;
+            this.lenovoSimpleButton1.AppearancePressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lenovoSimpleButton1.AppearancePressed.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lenovoSimpleButton1.AppearancePressed.ForeColor = System.Drawing.Color.White;
+            this.lenovoSimpleButton1.AppearancePressed.Options.UseBackColor = true;
+            this.lenovoSimpleButton1.AppearancePressed.Options.UseBorderColor = true;
+            this.lenovoSimpleButton1.AppearancePressed.Options.UseForeColor = true;
+            this.lenovoSimpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.lenovoSimpleButton1.Location = new System.Drawing.Point(262, 235);
+            this.lenovoSimpleButton1.LookAndFeel.SkinMaskColor = System.Drawing.Color.White;
+            this.lenovoSimpleButton1.Name = "lenovoSimpleButton1";
+            this.lenovoSimpleButton1.Size = new System.Drawing.Size(176, 23);
+            this.lenovoSimpleButton1.TabIndex = 4;
+            this.lenovoSimpleButton1.Text = "lenovoSimpleButton1";
+            this.lenovoSimpleButton1.Click += new System.EventHandler(this.lenovoSimpleButton1_Click);
             // 
             // lenovoGridLookUpEdit1
             // 
@@ -117,22 +134,14 @@
             this.lenovoGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             this.lenovoGridLookUpEdit1View.OptionsView.ShowIndicator = false;
             // 
-            // label1
-            // 
-            this.label1.Image = global::MortalDemo.Properties.Resources.载入中动画_时间轴改;
-            this.label1.Location = new System.Drawing.Point(34, 372);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(331, 107);
-            this.label1.TabIndex = 5;
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(800, 600);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pictureEdit1);
+            this.Controls.Add(this.lenovoSimpleButton1);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.lenovoGridLookUpEdit1);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -140,8 +149,6 @@
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form2_Paint);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lenovoGridLookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lenovoGridLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
@@ -152,9 +159,8 @@
         private System.Windows.Forms.Button button1;
         private Lenovo.XtraEditors.LenovoGridLookUpEdit lenovoGridLookUpEdit1;
         private DevExpress.XtraGrid.Views.Grid.GridView lenovoGridLookUpEdit1View;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private Lenovo.XtraEditors.LenovoSimpleButton lenovoSimpleButton1;
         //private Lenovo.XtraEditors.LenovoLookUpEdit lenovoLookUpEdit2;
         //private Lenovo.XtraEditors.LenovoMemoEdit lenovoMemoEdit1;
         //private Lenovo.XtraEditors.LenovoTreeListLookUpEdit lenovoTreeListLookUpEdit1;

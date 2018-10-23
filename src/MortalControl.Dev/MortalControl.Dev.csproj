@@ -98,6 +98,9 @@
     <Compile Include="Tools\LenovoTreeStyleApi.cs" />
     <Compile Include="Utils\LenovoAppearanceObject.cs" />
     <Compile Include="Utils\LenovoAppearanceOptions.cs" />
+    <Compile Include="XtraEditors\LenovoSimpleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraEditors\LenovoCheckEdit.cs">
       <SubType>Component</SubType>
     </Compile>

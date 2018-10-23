@@ -70,5 +70,14 @@ namespace MortalDemo
                 e.Graphics.DrawImage(m_Image, new Rectangle(145, 140, m_Image.Width, m_Image.Height));
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = string.Empty;
+            for (int i = 0; i < 10; i++)
+            {
+                richTextBox1.Text += Guid.NewGuid().ToString().ToUpper() + "\r\n";
+            }
+        }
     }
 }

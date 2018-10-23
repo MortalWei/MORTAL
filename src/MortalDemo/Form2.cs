@@ -82,6 +82,11 @@ namespace MortalDemo
         {
 
         }
+
+        private void lenovoSimpleButton1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("变蓝");
+        }
     }
 
     public class TestModel
