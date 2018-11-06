@@ -22,19 +22,19 @@ namespace Lenovo.XtraEditors.Tools
             if (gridControl == null) return;
             if (gridControl.Views.Count == 0) return;
             gridControl.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            foreach (DevExpress.XtraGrid.Views.Base.BaseView gridView in gridControl.Views)
+            foreach (DevExpress.XtraGrid.Views.Base.BaseView gridView in gridControl.ViewCollection)
             {
-                if (gridView is DevExpress.XtraGrid.Views.BandedGrid.BandedGridView
+                if (gridView is BandedGridView
                    ||
-                   gridView is DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView)
+                   gridView is AdvBandedGridView)
                 {
-                    SetBasicStyle(bandedGridView: gridView as DevExpress.XtraGrid.Views.BandedGrid.BandedGridView, loadStatus: loadStatus);
+                    SetBasicStyle(bandedGridView: gridView as BandedGridView, loadStatus: loadStatus);
                 }
-                else if (gridView is DevExpress.XtraGrid.Views.Grid.GridView)
+                else if (gridView is GridView)
                 {
-                    SetBasicStyle(gridView: gridView as DevExpress.XtraGrid.Views.Grid.GridView, loadStatus: loadStatus);
+                    SetBasicStyle(gridView: gridView as GridView, loadStatus: loadStatus);
                 }
-                if (eventArgs != null) SetColumnEvent(gridView as DevExpress.XtraGrid.Views.Grid.GridView, eventArgs);
+                if (eventArgs != null) SetColumnEvent(gridView as GridView, eventArgs);
             }
         }
 
@@ -48,11 +48,11 @@ namespace Lenovo.XtraEditors.Tools
             if (gridControl.Views.Count == 0) return;
             foreach (DevExpress.XtraGrid.Views.Base.BaseView gridView in gridControl.Views)
             {
-                if (gridView is DevExpress.XtraGrid.Views.BandedGrid.BandedGridView
+                if (gridView is BandedGridView
                    ||
-                   gridView is DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView)
+                   gridView is AdvBandedGridView)
                 {
-                    SetFontStyle(bandedGridView: gridView as DevExpress.XtraGrid.Views.BandedGrid.BandedGridView);
+                    SetFontStyle(bandedGridView: gridView as BandedGridView);
                 }
                 else if (gridView is DevExpress.XtraGrid.Views.Grid.GridView)
                 {
@@ -66,23 +66,23 @@ namespace Lenovo.XtraEditors.Tools
             gridView.Appearance.HeaderPanel.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             gridView.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.FromArgb(134, 136, 142);
             gridView.Appearance.HeaderPanel.Options.UseFont = true;
-            
+
             gridView.Appearance.Row.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             gridView.Appearance.Row.ForeColor = System.Drawing.Color.FromArgb(22, 23, 35);
             gridView.Appearance.Row.Options.UseFont = true;
-            
+
             gridView.Appearance.FocusedCell.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             gridView.Appearance.FocusedCell.ForeColor = System.Drawing.Color.FromArgb(22, 23, 35);
             gridView.Appearance.FocusedCell.Options.UseFont = true;
-            
+
             gridView.Appearance.FocusedRow.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             gridView.Appearance.FocusedRow.ForeColor = System.Drawing.Color.FromArgb(22, 23, 35);
             gridView.Appearance.FocusedRow.Options.UseFont = true;
-            
+
             gridView.Appearance.SelectedRow.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             gridView.Appearance.SelectedRow.ForeColor = System.Drawing.Color.FromArgb(22, 23, 35);
             gridView.Appearance.SelectedRow.Options.UseFont = true;
-            
+
             gridView.Appearance.HideSelectionRow.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             gridView.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.FromArgb(22, 23, 35);
             gridView.Appearance.HideSelectionRow.Options.UseFont = true;
@@ -195,7 +195,7 @@ namespace Lenovo.XtraEditors.Tools
             if (loadStatus) SetBasicStatusStyle(gridView);
         }
 
-        private static void SetBasicStyle(DevExpress.XtraGrid.Views.BandedGrid.BandedGridView bandedGridView, bool loadStatus = false)
+        private static void SetBasicStyle(BandedGridView bandedGridView, bool loadStatus = false)
         {
             bandedGridView.Appearance.BandPanel.BackColor = System.Drawing.Color.FromArgb(246, 246, 246);
             bandedGridView.Appearance.BandPanel.BorderColor = System.Drawing.Color.FromArgb(196, 196, 196);

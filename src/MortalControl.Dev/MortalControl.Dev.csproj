@@ -71,6 +71,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\SimpleTheme.cs" />
     <Compile Include="IEventArgs\IGridColumnEventArgs.cs" />
     <Compile Include="IEventArgs\ITreeColumnEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

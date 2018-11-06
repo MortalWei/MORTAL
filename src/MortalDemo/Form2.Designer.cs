@@ -33,6 +33,7 @@
             this.lenovoSimpleButton1 = new Lenovo.XtraEditors.LenovoSimpleButton();
             this.lenovoGridLookUpEdit1 = new Lenovo.XtraEditors.LenovoGridLookUpEdit();
             this.lenovoGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.lenovoSimpleButton2 = new Lenovo.XtraEditors.LenovoSimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.lenovoGridLookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lenovoGridLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
@@ -58,30 +59,29 @@
             // lenovoSimpleButton1
             // 
             this.lenovoSimpleButton1.Appearance.BackColor = System.Drawing.Color.White;
-            this.lenovoSimpleButton1.Appearance.BorderColor = System.Drawing.Color.Red;
-            this.lenovoSimpleButton1.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lenovoSimpleButton1.Appearance.BorderColor = System.Drawing.Color.Cyan;
+            this.lenovoSimpleButton1.Appearance.ForeColor = System.Drawing.Color.Cyan;
             this.lenovoSimpleButton1.Appearance.Options.UseBackColor = true;
             this.lenovoSimpleButton1.Appearance.Options.UseBorderColor = true;
             this.lenovoSimpleButton1.Appearance.Options.UseForeColor = true;
-            this.lenovoSimpleButton1.AppearanceDisabled.BackColor = System.Drawing.Color.Silver;
-            this.lenovoSimpleButton1.AppearanceDisabled.BorderColor = System.Drawing.Color.Silver;
-            this.lenovoSimpleButton1.AppearanceDisabled.ForeColor = System.Drawing.Color.White;
+            this.lenovoSimpleButton1.AppearanceDisabled.BackColor = System.Drawing.Color.White;
+            this.lenovoSimpleButton1.AppearanceDisabled.BorderColor = System.Drawing.Color.Cyan;
+            this.lenovoSimpleButton1.AppearanceDisabled.ForeColor = System.Drawing.Color.Cyan;
             this.lenovoSimpleButton1.AppearanceDisabled.Options.UseBackColor = true;
             this.lenovoSimpleButton1.AppearanceDisabled.Options.UseBorderColor = true;
             this.lenovoSimpleButton1.AppearanceDisabled.Options.UseForeColor = true;
-            this.lenovoSimpleButton1.AppearanceHovered.BackColor = System.Drawing.Color.Red;
-            this.lenovoSimpleButton1.AppearanceHovered.BorderColor = System.Drawing.Color.Red;
+            this.lenovoSimpleButton1.AppearanceHovered.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.lenovoSimpleButton1.AppearanceHovered.BorderColor = System.Drawing.Color.PaleTurquoise;
             this.lenovoSimpleButton1.AppearanceHovered.ForeColor = System.Drawing.Color.White;
             this.lenovoSimpleButton1.AppearanceHovered.Options.UseBackColor = true;
             this.lenovoSimpleButton1.AppearanceHovered.Options.UseBorderColor = true;
             this.lenovoSimpleButton1.AppearanceHovered.Options.UseForeColor = true;
-            this.lenovoSimpleButton1.AppearancePressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lenovoSimpleButton1.AppearancePressed.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lenovoSimpleButton1.AppearancePressed.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.lenovoSimpleButton1.AppearancePressed.BorderColor = System.Drawing.Color.PaleTurquoise;
             this.lenovoSimpleButton1.AppearancePressed.ForeColor = System.Drawing.Color.White;
             this.lenovoSimpleButton1.AppearancePressed.Options.UseBackColor = true;
             this.lenovoSimpleButton1.AppearancePressed.Options.UseBorderColor = true;
             this.lenovoSimpleButton1.AppearancePressed.Options.UseForeColor = true;
-            this.lenovoSimpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
             this.lenovoSimpleButton1.Location = new System.Drawing.Point(262, 235);
             this.lenovoSimpleButton1.LookAndFeel.SkinMaskColor = System.Drawing.Color.White;
             this.lenovoSimpleButton1.Name = "lenovoSimpleButton1";
@@ -134,12 +134,49 @@
             this.lenovoGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             this.lenovoGridLookUpEdit1View.OptionsView.ShowIndicator = false;
             // 
+            // lenovoSimpleButton2
+            // 
+            this.lenovoSimpleButton2.Appearance.BackColor = System.Drawing.Color.White;
+            this.lenovoSimpleButton2.Appearance.BorderColor = System.Drawing.Color.Gray;
+            this.lenovoSimpleButton2.Appearance.ForeColor = System.Drawing.Color.Gray;
+            this.lenovoSimpleButton2.Appearance.Options.UseBackColor = true;
+            this.lenovoSimpleButton2.Appearance.Options.UseBorderColor = true;
+            this.lenovoSimpleButton2.Appearance.Options.UseForeColor = true;
+            this.lenovoSimpleButton2.AppearanceDisabled.BackColor = System.Drawing.Color.White;
+            this.lenovoSimpleButton2.AppearanceDisabled.BorderColor = System.Drawing.Color.Gray;
+            this.lenovoSimpleButton2.AppearanceDisabled.ForeColor = System.Drawing.Color.Gray;
+            this.lenovoSimpleButton2.AppearanceDisabled.Options.UseBackColor = true;
+            this.lenovoSimpleButton2.AppearanceDisabled.Options.UseBorderColor = true;
+            this.lenovoSimpleButton2.AppearanceDisabled.Options.UseForeColor = true;
+            this.lenovoSimpleButton2.AppearanceHovered.BackColor = System.Drawing.Color.LightGray;
+            this.lenovoSimpleButton2.AppearanceHovered.BorderColor = System.Drawing.Color.LightGray;
+            this.lenovoSimpleButton2.AppearanceHovered.ForeColor = System.Drawing.Color.White;
+            this.lenovoSimpleButton2.AppearanceHovered.Options.UseBackColor = true;
+            this.lenovoSimpleButton2.AppearanceHovered.Options.UseBorderColor = true;
+            this.lenovoSimpleButton2.AppearanceHovered.Options.UseForeColor = true;
+            this.lenovoSimpleButton2.AppearancePressed.BackColor = System.Drawing.Color.LightGray;
+            this.lenovoSimpleButton2.AppearancePressed.BorderColor = System.Drawing.Color.LightGray;
+            this.lenovoSimpleButton2.AppearancePressed.ForeColor = System.Drawing.Color.White;
+            this.lenovoSimpleButton2.AppearancePressed.Options.UseBackColor = true;
+            this.lenovoSimpleButton2.AppearancePressed.Options.UseBorderColor = true;
+            this.lenovoSimpleButton2.AppearancePressed.Options.UseForeColor = true;
+            this.lenovoSimpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.lenovoSimpleButton2.Location = new System.Drawing.Point(262, 264);
+            this.lenovoSimpleButton2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
+            this.lenovoSimpleButton2.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.lenovoSimpleButton2.Name = "lenovoSimpleButton2";
+            this.lenovoSimpleButton2.Size = new System.Drawing.Size(176, 23);
+            this.lenovoSimpleButton2.StyleTheme = Lenovo.XtraEditors.SimpleTheme.Gray;
+            this.lenovoSimpleButton2.TabIndex = 5;
+            this.lenovoSimpleButton2.Text = "lenovoSimpleButton2";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.lenovoSimpleButton2);
             this.Controls.Add(this.lenovoSimpleButton1);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.lenovoGridLookUpEdit1);
@@ -161,6 +198,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView lenovoGridLookUpEdit1View;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private Lenovo.XtraEditors.LenovoSimpleButton lenovoSimpleButton1;
+        private Lenovo.XtraEditors.LenovoSimpleButton lenovoSimpleButton2;
         //private Lenovo.XtraEditors.LenovoLookUpEdit lenovoLookUpEdit2;
         //private Lenovo.XtraEditors.LenovoMemoEdit lenovoMemoEdit1;
         //private Lenovo.XtraEditors.LenovoTreeListLookUpEdit lenovoTreeListLookUpEdit1;

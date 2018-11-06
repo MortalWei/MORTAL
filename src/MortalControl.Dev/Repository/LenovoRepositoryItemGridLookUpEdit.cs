@@ -11,12 +11,14 @@ namespace Lenovo.XtraEditors.Repository
     /// <summary>
     /// Contains settings specific to the DevExpress.XtraEditors.GridLookUpEdit control.
     /// </summary>
+    /// 
+    [UserRepositoryItem("LenovoRepositoryItemGridLookUpEdit")]
     public class LenovoRepositoryItemGridLookUpEdit : RepositoryItemGridLookUpEdit
     {
         /// <summary>
         /// 控件类型名称
         /// </summary>
-        public const string EditorName = "LenovoRepositoryItemCheckEdit";
+        public const string EditorName = "LenovoRepositoryItemGridLookUpEdit";
 
         /// <summary>
         /// 控件类型名称
