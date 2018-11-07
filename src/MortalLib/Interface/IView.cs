@@ -1,4 +1,4 @@
-﻿namespace Mortal.Interface
+﻿namespace Lenovo.XtraCommon
 {
     /// <summary>
     /// MVP View基类

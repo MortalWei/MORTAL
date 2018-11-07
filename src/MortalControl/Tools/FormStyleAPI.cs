@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 
-namespace Mortal.Utils.WindowsUtils.APIUtils
+namespace Lenovo.Utils.WindowsUtils.APIUtils
 {
     internal class FormStyleAPI
     {

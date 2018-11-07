@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Linq;
-using System.Text;
-using MortalLib;
-using System.ComponentModel.DataAnnotations;
 
-namespace MortalLib.DataTables
+namespace Lenovo.XtraCommon
 {
     /// <summary>
     /// DataTable转换

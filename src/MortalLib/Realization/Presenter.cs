@@ -1,6 +1,4 @@
-﻿using Mortal.Interface;
-
-namespace Mortal.Realization
+﻿namespace Lenovo.XtraCommon
 {
     /// <summary>
     /// MVP 模式Presenter基类

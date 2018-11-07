@@ -1,4 +1,4 @@
-﻿namespace Mortal
+﻿namespace Lenovo.XtraPart
 {
     /// <summary>
     /// 用户界面操作进度条窗体进度接口

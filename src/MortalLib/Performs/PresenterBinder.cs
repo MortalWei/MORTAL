@@ -1,8 +1,6 @@
-﻿using Mortal.Attributes;
-using Mortal.Interface;
-using System;
+﻿using System;
 
-namespace Mortal.Performs
+namespace Lenovo.XtraCommon
 {
     /// <summary>
     /// MVP模式 Presenter、View映射处理类

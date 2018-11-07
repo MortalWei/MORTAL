@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Drawing.Drawing2D;
 
-namespace Mortal.Utils.WindowsUtils.APIUtils
+namespace Lenovo.Utils.WindowsUtils.APIUtils
 {
     internal class DrawShadowAPI
     {

@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace Mortal.Parts
+namespace Lenovo.XtraPart
 {
     /// <summary>
     /// 无边框纯框体

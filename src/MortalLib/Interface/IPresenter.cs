@@ -1,4 +1,4 @@
-﻿namespace Mortal.Interface
+﻿namespace Lenovo.XtraCommon
 {
     /// <summary>
     /// MVP模式 Presenter接口基类

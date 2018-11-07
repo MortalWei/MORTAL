@@ -5,16 +5,12 @@
 //      desc:       工具描述
 //      Copyright (c) yuzhengyang. All rights reserved.
 //************************************************************************
-using Mortal.Parts;
-using Mortal.Utils.WindowsUtils.APIUtils;
+using Lenovo.XtraPart;
 using System;
-using System.ComponentModel;
 using System.Drawing;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Mortal.Skin.Shadow
+namespace Lenovo.Skin.Shadow
 {
     internal partial class ShadowForm : NoneForm
     {

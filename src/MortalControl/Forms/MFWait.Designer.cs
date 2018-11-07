@@ -1,4 +1,4 @@
-﻿namespace Mortal.Parts
+﻿namespace Lenovo.XtraPart
 {
     partial class MFWait
     {

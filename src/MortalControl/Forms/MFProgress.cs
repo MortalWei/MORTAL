@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Mortal.Parts
+namespace Lenovo.XtraPart
 {
     /// <summary>
     /// 进度条等待窗体

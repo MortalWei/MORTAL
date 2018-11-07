@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Mortal.Parts
+namespace Lenovo.XtraPart
 {
     /// <summary>
     /// 进度条

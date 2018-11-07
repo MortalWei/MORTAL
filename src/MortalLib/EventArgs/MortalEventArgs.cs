@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace Mortal
+namespace Lenovo.XtraCommon
 {
     /// <summary>
     /// 包含事件数据的基类。

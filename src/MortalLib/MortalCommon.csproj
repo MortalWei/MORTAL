@@ -7,8 +7,8 @@
     <ProjectGuid>{23E5B41B-CC82-47A6-8779-4C2C39AE52D2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MortalLib</RootNamespace>
-    <AssemblyName>MortalLib</AssemblyName>
+    <RootNamespace>Lenovo.XtraCommon</RootNamespace>
+    <AssemblyName>Lenovo.XtraCommon</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -20,7 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\MortalLib.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\Lenovo.XtraCommon.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -29,6 +29,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Lenovo.XtraCommon.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -49,6 +50,7 @@
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Interface\IPresenter.cs" />
     <Compile Include="Interface\IView.cs" />
+    <Compile Include="Models\InterfaceResult.cs" />
     <Compile Include="Performs\PresenterBinder.cs" />
     <Compile Include="Performs\RealizationBinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,4 +1,5 @@
-﻿using Mortal;
+﻿using Lenovo;
+using Lenovo.XtraPart;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

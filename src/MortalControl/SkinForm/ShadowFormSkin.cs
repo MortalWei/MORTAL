@@ -1,17 +1,11 @@
-﻿using Mortal.Parts;
-using Mortal.Utils.WindowsUtils.APIUtils;
+﻿using Lenovo.Utils.WindowsUtils.APIUtils;
+using Lenovo.XtraPart;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Mortal.Skin.Shadow
+namespace Lenovo.Skin.Shadow
 {
     partial class ShadowFormSkin : NoneForm
     {

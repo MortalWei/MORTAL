@@ -1,4 +1,4 @@
-﻿namespace Mortal.Skin.Shadow
+﻿namespace Lenovo.Skin.Shadow
 {
     partial class ShadowFormSkin
     {

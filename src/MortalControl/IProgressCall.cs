@@ -1,4 +1,4 @@
-﻿namespace Mortal
+﻿namespace Lenovo.XtraPart
 {
     /// <summary>
     /// 用户窗体操作进度窗体回调函数

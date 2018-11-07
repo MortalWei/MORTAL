@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MortalLib
+namespace System.Linq
 {
     /// <summary>
     /// IEnumerable扩展

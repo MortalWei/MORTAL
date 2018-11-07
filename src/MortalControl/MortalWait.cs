@@ -1,11 +1,7 @@
-﻿using Mortal.Parts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System;
 using System.Windows.Forms;
 
-namespace Mortal
+namespace Lenovo.XtraPart
 {
     /// <summary>
     /// 等待处理

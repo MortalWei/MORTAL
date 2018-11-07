@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace Mortal.Parts
+namespace Lenovo.XtraPart
 {
     /// <summary>
     /// 环形等待窗体

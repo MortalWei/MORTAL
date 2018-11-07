@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mortal.Attributes
+namespace Lenovo.XtraCommon
 {
     /// <summary>
     /// MVP模式 用户界面设置Presenter

@@ -1,15 +1,10 @@
-﻿using Mortal.Parts.Properties;
-using Mortal.Skin.Shadow;
+﻿using Lenovo.XtraPart.Properties;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
-namespace Mortal.Parts
+namespace Lenovo.XtraPart
 {
     /// <summary>
     /// 动画等待窗体
