@@ -127,11 +127,20 @@
     <Compile Include="XtraEditors\LenovoTreeListLookUpEdit.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="XtraEditors\LenovoNoneForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XtraEditors\LenovoNoneForm.Designer.cs">
+      <DependentUpon>LenovoNoneForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="XtraEditors\LenovoGridLookUpEdit.resx">
       <DependentUpon>LenovoGridLookUpEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraEditors\LenovoNoneForm.resx">
+      <DependentUpon>LenovoNoneForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

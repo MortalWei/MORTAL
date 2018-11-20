@@ -48,5 +48,11 @@ namespace MortalDemo
             }
             MessageBox.Show(_Str);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Lenovo.XtraEditors.LenovoNoneForm fm = new Lenovo.XtraEditors.LenovoNoneForm();
+            fm.ShowDialog();
+        }
     }
 }

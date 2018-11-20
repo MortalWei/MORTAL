@@ -33,6 +33,10 @@ namespace Lenovo.XtraCommon
 
             if (string.IsNullOrEmpty(nameSpace))
             {
+                var v1 = AppDomain.CurrentDomain.GetAssemblies().SelectMany(item => item.GetTypes());
+                var v2 = v1.Where(item => item.GetInterfaces().Contains(typeof(T)));
+                var v3 = v2.Select(type => (T)Activator.CreateInstance(type)).ToList();
+
                 return AppDomain.CurrentDomain.GetAssemblies().SelectMany(item => item.GetTypes())
                     .Where(item => item.GetInterfaces().Contains(typeof(T)))
                     .Select(type => (T)Activator.CreateInstance(type))
@@ -40,6 +44,10 @@ namespace Lenovo.XtraCommon
             }
             else
             {
+                var v1 = AppDomain.CurrentDomain.GetAssemblies().SelectMany(item => item.GetTypes());
+                var v2 = v1.Where(item => item.GetInterfaces().Contains(typeof(T)) && item.Namespace.Equals(nameSpace));
+                var v3 = v2.Select(type => (T)Activator.CreateInstance(type)).ToList();
+
                 return AppDomain.CurrentDomain.GetAssemblies().SelectMany(item => item.GetTypes())
                     .Where(item => item.GetInterfaces().Contains(typeof(T)) && item.Namespace.Equals(nameSpace))
                     .Select(type => (T)Activator.CreateInstance(type))
