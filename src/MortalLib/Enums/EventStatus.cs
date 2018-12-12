@@ -28,6 +28,10 @@
         /// <summary>
         /// 无效
         /// </summary>
-        Invalid = 5
+        Invalid = 5,
+        /// <summary>
+        /// 提示
+        /// </summary>
+        Information = 6
     }
 }
